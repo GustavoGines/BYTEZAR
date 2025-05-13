@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require '../backend/config/db.php';
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 if (!$id) {
@@ -22,7 +22,7 @@ if (!$producto) {
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($producto['nombre']) ?> - Detalles</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -40,7 +40,7 @@ if (!$producto) {
             <h4 class="text-success">$<?= number_format($producto['precio'], 2, ',', '.') ?></h4>
 
             <!-- Agregar al carrito -->
-            <form action="agregar_carrito.php" method="post">
+            <form action="../backend/modules/carrito/agregar_carrito.php" method="post">
                 <input type="hidden" name="id" value="<?= $producto['id'] ?>">
                 <input type="hidden" name="nombre" value="<?= $producto['nombre'] ?>">
                 <input type="hidden" name="precio" value="<?= $producto['precio'] ?>">

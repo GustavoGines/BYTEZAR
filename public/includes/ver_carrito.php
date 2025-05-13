@@ -38,7 +38,7 @@ if (count($carrito) === 0): ?>
 <script>
 // Botón para eliminar producto
 function eliminarDelCarrito(id) {
-    fetch(`eliminar_producto.php?id=${id}`)
+    fetch(`../backend/modules/carrito/eliminar_producto.php?id=${id}`)
         .then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -83,7 +83,7 @@ document.querySelectorAll('.cambiarCantidad').forEach(btn => {
         const id = this.dataset.id;
         const cambio = this.dataset.cambio;
 
-        fetch('actualizar_cantidad.php', {
+        fetch('../backend/modules/carrito/actualizar_cantidad.php', {
             method: 'POST',
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             body: `id=${id}&cambio=${cambio}`
@@ -92,7 +92,7 @@ document.querySelectorAll('.cambiarCantidad').forEach(btn => {
         .then(data => {
             if (data.success) {
                 // Recargar la vista del carrito
-                $('#productosCarrito').load('ver_carrito.php');
+                $('#productosCarrito').load('../includes/ver_carrito.php');
                 $('#contadorCarrito').text(data.nuevaCantidad).show();
             } else {
                 mostrarMensaje(data.message, false);

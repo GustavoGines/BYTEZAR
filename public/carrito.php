@@ -41,7 +41,7 @@ if (empty($carrito)) {
                 <tr>
                     <td><?= htmlspecialchars($producto['nombre']) ?></td>
                     <td>
-                        <form action="actualizar_carrito.php" method="post" class="d-flex">
+                        <form action="../backend/modules/carrito/actualizar_carrito.php" method="post" class="d-flex">
                             <input type="hidden" name="indice" value="<?= $indice ?>">
                             <input type="number" name="cantidad" value="<?= $producto['cantidad'] ?>" min="1" class="form-control form-control-sm me-2" style="width: 70px;">
                             <button type="submit" class="btn btn-sm btn-success">Actualizar</button>
@@ -50,7 +50,7 @@ if (empty($carrito)) {
                     <td>$<?= number_format($producto['precio'], 2, ',', '.') ?></td>
                     <td>$<?= number_format($subtotal, 2, ',', '.') ?></td>
                     <td>
-                        <a href="eliminar_producto.php?indice=<?= $indice ?>" class="btn btn-danger btn-sm">Eliminar</a>
+                        <a href="../backend/modules/carrito/eliminar_producto.php?indice=<?= $indice ?>" class="btn btn-danger btn-sm">Eliminar</a>
                     </td>
                 </tr>
             <?php } ?>

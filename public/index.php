@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require '../backend/config/db.php';
 
 // Obtener categorías
 $queryCategorias = "SELECT DISTINCT categoria FROM productos";
@@ -30,7 +30,7 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo de Productos</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/styles.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -92,7 +92,7 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
       const productoPrecio = $(this).data('precio');
 
       $.ajax({
-        url: 'agregar_carrito.php',
+        url: '../backend/modules/carrito/agregar_carrito.php',
         type: 'POST',
         data: {
           id: productoId,
@@ -121,7 +121,7 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
       const cambio = $(this).data('cambio');
     
       $.ajax({
-        url: 'actualizar_cantidad.php',
+        url: '../backend/modules/carrito/actualizar_cantidad.php',
         method: 'POST',
         data: { indice, cambio },
         success: function () {
@@ -141,7 +141,7 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
 
     function actualizarCarrito() {
   $.ajax({
-    url: 'ver_carrito.php',
+    url: 'includes/ver_carrito.php',
     type: 'GET',
     success: function (response) {
       $('#productosCarrito').html(response);
