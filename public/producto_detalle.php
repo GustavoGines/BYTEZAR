@@ -24,6 +24,9 @@ if (!$producto) {
     <title><?= htmlspecialchars($producto['nombre']) ?> - Detalles</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 </head>
 <body>
 <div class="container py-5">
@@ -39,15 +42,31 @@ if (!$producto) {
             <p><?= nl2br(htmlspecialchars($producto['descripcion'])) ?></p>
             <h4 class="text-success">$<?= number_format($producto['precio'], 2, ',', '.') ?></h4>
 
-            <!-- Agregar al carrito -->
-            <form action="../backend/modules/carrito/agregar_carrito.php" method="post">
-                <input type="hidden" name="id" value="<?= $producto['id'] ?>">
-                <input type="hidden" name="nombre" value="<?= $producto['nombre'] ?>">
-                <input type="hidden" name="precio" value="<?= $producto['precio'] ?>">
-                <button type="submit" class="btn btn-primary mt-3">Agregar al carrito</button>
-            </form>
+          <button type="button" class="btn btn-primary mt-3 agregarCarrito"
+             data-id="<?= $producto['id'] ?>"
+             data-nombre="<?= $producto['nombre'] ?>"
+             data-precio="<?= $producto['precio'] ?>">
+             Agregar al carrito
+          </button>
         </div>
     </div>
 </div>
+<!-- Botón para abrir el carrito -->
+<button id="abrirCarritoBtn" class="carrito-cerrado">
+  &#128722;
+  <span id="contadorCarrito" class="badge bg-danger ms-1">0</span>
+</button>
+
+<div id="carritoFlotante">
+  <h2>Carrito</h2>
+  <div id="productosCarrito"></div>
+  <button id="cerrarCarritoBtn" class="btn btn-danger">Cerrar Carrito</button>
+</div>
+<!-- Script del carrito -->
+<script src="js/carrito.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
+
 </html>
