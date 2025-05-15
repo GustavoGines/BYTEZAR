@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>BYTEZAR - Acceso de Usuarios</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/tooplate-style.css" />
+</head>
+<body>
+    <!-- PRE LOADER -->
+    <section class="preloader">
+        <div class="spinner">
+            <span class="spinner-rotate"></span>
+        </div>
+    </section>
+
+    <!-- VIDEO BACKGROUND -->
+    <div class="video-background">
+      <video autoplay muted loop playsinline>
+        <source src="../videos/video.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
+      </video>
+    </div>
+
+    <!-- MENÚ PRINCIPAL -->
+    <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/bytezar_imagen.png" alt="Bytezar" 
+                         style="width: 150px; margin-top: -10px;">
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html" class="smoothScroll">Inicio</a></li>
+                    <li><a href="index.html#catalogo" class="smoothScroll">Catálogo</a></li>
+                    <li><a href="index.html#feature" class="smoothScroll">Destacados</a></li>
+                    <li><a href="index.html#about" class="smoothScroll">Quiénes Somos</a></li>
+                    <li><a href="contactos.html" class="smoothScroll">Contactos</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="login.html"><span>Login</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE LOGIN -->
+    <section id="login" style="padding: 100px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 col-sm-12">
+                    <div class="login-form-container">
+                        <div class="section-title text-center">
+                            <h1>Acceso de Usuarios</h1>
+                            <p>Ingresa tus credenciales para acceder a tu cuenta</p>
+                        </div>
+
+                        <form id="login-form" method="post" class="custom-form">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                    <input type="email" class="form-control" 
+                                           id="email" name="email" 
+                                           placeholder="Correo electrónico" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                    <input type="password" class="form-control" 
+                                           id="password" name="password" 
+                                           placeholder="Contraseña" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="remember"> Recordar sesión
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 text-right">
+                                        <a href="password-reset.html" class="forgot-password">
+                                            ¿Olvidaste tu contraseña?
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn section-btn btn-block">
+                                    <i class="fa fa-sign-in"></i> Ingresar
+                                </button>
+                            </div>
+
+                            <div class="registration-link text-center">
+                                ¿No tienes cuenta? 
+                                <a href="registro.html" class="register-link">
+                                    Regístrate aquí
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <!-- Insertar aquí el mismo footer de las otras páginas -->
+
+    <!-- SCRIPTS -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>
