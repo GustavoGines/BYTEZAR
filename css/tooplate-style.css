@@ -849,11 +849,24 @@ http://www.tooplate.com/view/2106-soft-landing
   z-index: -1;
 }
 
-.video-background video {
-  min-width: 100%;
-  min-height: 100%;
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
+  z-index: -1;
 }
+
+@media (max-width: 768px) {
+  #background-video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
 
 .contenido {
   position: relative;
