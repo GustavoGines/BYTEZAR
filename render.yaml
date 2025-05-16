@@ -4,6 +4,6 @@ services:
     env: php
     plan: free
     branch: Gustavo
-    buildCommand: ""
+    buildCommand: ./.render-build.sh
     startCommand: ""
     rootDir: .

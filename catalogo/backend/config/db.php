@@ -1,12 +1,12 @@
 <?php
-$host = 'localhost';
-$db = 'catalogo';
-$user = 'root';
-$pass = 'Gusty1996';
-$charset = 'utf8mb4';
-$puerto = 3307;
+$host = 'dpg-d0hpjbq4d50c73dc1gb0-a.oregon-postgres.render.com'; // Asegurate que sea el host completo
+$db = 'prueba_db_n963';
+$user = 'prueba_db_n963_user';
+$pass = 'fz8hoDvUGGuFQw8sttoUE9WBI2E8gFDf';
+$puerto = 5432;
 
-$dsn = "mysql:host=$host;port=$puerto;dbname=$db;charset=$charset";
+$dsn = "pgsql:host=$host;port=$puerto;dbname=$db";
+
 $options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -17,20 +17,4 @@ try {
 } catch (PDOException $e) {
     die('Error de conexión: ' . $e->getMessage());
 }
-
-/* Estructura de la base de datos:
-CREATE DATABASE catalogo;
-USE catalogo;
-
-CREATE TABLE productos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    descripcion TEXT,
-    precio DECIMAL(10, 2) NOT NULL
-);
-
-INSERT INTO productos (nombre, descripcion, precio) VALUES
-('Producto 1', 'Descripción del primer producto', 19.99),
-('Producto 2', 'Descripción del segundo producto', 29.99);
-*/
 ?>
