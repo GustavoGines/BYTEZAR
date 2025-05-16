@@ -42,27 +42,30 @@ if (!$producto) {
 </div>
 
 
+<!-- Caja blanca translúcida para que se vea bien -->
 <div class="container py-5">
-    <a href="index.php" class="btn btn-secondary mb-4">← Volver</a>
+  <a href="index.php" class="btn btn-secondary mb-4">← Volver</a>
 
+  <div class="detalle-fondo-blanco rounded shadow">
     <div class="row">
-        <div class="col-md-6">
-            <img src="<?= htmlspecialchars($producto['imagen']) ?>" alt="Imagen del producto" class="img-fluid rounded shadow">
-        </div>
-        <div class="col-md-6">
-            <h2><?= htmlspecialchars($producto['nombre']) ?></h2>
-            <p><strong>Categoría:</strong> <?= htmlspecialchars($producto['categoria']) ?></p>
-            <p><?= nl2br(htmlspecialchars($producto['descripcion'])) ?></p>
-            <h4 class="text-success">$<?= number_format($producto['precio'], 2, ',', '.') ?></h4>
+      <div class="col-md-6">
+        <img src="<?= htmlspecialchars($producto['imagen']) ?>" alt="Imagen del producto" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6">
+        <h2><?= htmlspecialchars($producto['nombre']) ?></h2>
+        <p><strong>Categoría:</strong> <?= htmlspecialchars($producto['categoria']) ?></p>
+        <p><?= nl2br(htmlspecialchars($producto['descripcion'])) ?></p>
+        <h4 class="text-success">$<?= number_format($producto['precio'], 2, ',', '.') ?></h4>
 
-          <button type="button" class="btn btn-primary mt-3 agregarCarrito"
-             data-id="<?= $producto['id'] ?>"
-             data-nombre="<?= $producto['nombre'] ?>"
-             data-precio="<?= $producto['precio'] ?>">
-             Agregar al carrito
-          </button>
-        </div>
+        <button type="button" class="btn btn-primary mt-3 agregarCarrito"
+                data-id="<?= $producto['id'] ?>"
+                data-nombre="<?= $producto['nombre'] ?>"
+                data-precio="<?= $producto['precio'] ?>">
+          Agregar al carrito
+        </button>
+      </div>
     </div>
+  </div>
 </div>
 <!-- Botón para abrir el carrito -->
 <button id="abrirCarritoBtn" class="carrito-cerrado">

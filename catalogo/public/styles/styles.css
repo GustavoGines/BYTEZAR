@@ -188,3 +188,9 @@ h2 {
   border-radius: 10px;
   padding: 2rem;
 }
+
+.detalle-fondo-blanco {
+  background-color: rgba(255, 255, 255, 0.9); /* blanco con transparencia */
+  color: #000; /* texto oscuro */
+  padding: 2rem;
+}
