@@ -4,6 +4,9 @@ FROM php:8.2-apache
 # Habilita mod_rewrite por si usás URLs amigables
 RUN a2enmod rewrite
 
+# Habilitar PDO PostgreSQL
+RUN docker-php-ext-install pdo_pgsql
+
 # Copia todo tu proyecto al directorio raíz de Apache
 COPY . /var/www/html/
 
