@@ -14,7 +14,6 @@ $options = [
 
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
-    echo "✅ Conexión exitosa a PostgreSQL";
 } catch (PDOException $e) {
     die("❌ Error de conexión: " . $e->getMessage());
 }
