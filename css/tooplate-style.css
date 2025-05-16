@@ -53,7 +53,7 @@ http://www.tooplate.com/view/2106-soft-landing
 
   a {
     color: #202020;
-    text-decoration: none !important;
+    text-decoration: none ;
   }
 
   a,
@@ -64,15 +64,15 @@ http://www.tooplate.com/view/2106-soft-landing
   }
 
   .btn {
-    color: #ffffff !important;
-     background: #29ca8e !important;
+    color: #ffffff ;
+     background: #29ca8e ;
   }
   .btn:hover {
-    color: #232423 !important;
-    background: #26cf2f !important;
+    color: #232423 ;
+    background: #26cf2f ;
   }
   .btn#destacados{
-    background: #29ca8e !important;
+    background: #29ca8e 
   }
 
   a:hover, a:active, a:focus {
@@ -80,7 +80,7 @@ http://www.tooplate.com/view/2106-soft-landing
     outline: none;
   }
   p.destacados{
-    color: #000 !important;
+    color: #000 ;
   }
 
   ::-webkit-scrollbar{
@@ -217,7 +217,7 @@ http://www.tooplate.com/view/2106-soft-landing
     border-radius: 50%;
     border: 1px solid #575757;
     border-top-color: #ffffff;
-    animation: spinner .9s linear infinite;
+    animation: spinner .3s linear infinite;
   }
 
   @-webkit-keyframes spinner {
@@ -879,7 +879,7 @@ http://www.tooplate.com/view/2106-soft-landing
 }
 
 .section-title > h1 {
-  color: #ffffff;
+  color: #ffffff!important;;
 }
 #about > .container {
   background: #000;

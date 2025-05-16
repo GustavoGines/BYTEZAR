@@ -20,8 +20,8 @@ $imagen = $producto['imagen'] ?: 'https://via.placeholder.com/400x300.png?text=I
                 <?= htmlspecialchars($producto['nombre']) ?>
             </a>
         </h5>
-        <p class="card-text"><?= htmlspecialchars($producto['descripcion']) ?></p>
-        <p class="card-text"><strong>Precio:</strong> $<?= number_format($producto['precio'], 2, ',', '.') ?></p>
+        <p class="card-text descripcion-producto"><?= htmlspecialchars($producto['descripcion']) ?></p>
+        <p class="card-text descripcion-producto"><strong>Precio:</strong> $<?= number_format($producto['precio'], 2, ',', '.') ?></p>
         
         <!-- Botón para agregar al carrito -->
         <button class="btn btn-primary agregarCarrito"
