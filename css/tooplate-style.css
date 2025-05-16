@@ -220,7 +220,7 @@ http://www.tooplate.com/view/2106-soft-landing
     animation: spinner .9s linear infinite;
   }
 
-  @-webkit-@keyframes spinner {
+  @-webkit-keyframes spinner {
     to {transform: rotate(360deg);}
   }
 
@@ -864,6 +864,8 @@ http://www.tooplate.com/view/2106-soft-landing
     object-fit: cover;
     width: 100vw;
     height: 100vh;
+    transform: translateZ(0);
+    will-change: transform;
   }
 }
 
