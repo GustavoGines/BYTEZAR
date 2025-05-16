@@ -31,12 +31,9 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
   <title>Catálogo de Productos</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
-     <link rel="stylesheet" href="../../css/bootstrap.min.css" />
-     <link rel="stylesheet" href="../../css/owl.carousel.css" />
-     <link rel="stylesheet" href="../../css/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+
      <!-- MAIN CSS -->
-    <!-- <link rel="stylesheet" href="../../css/tooplate-style.css" />-->
+  <link rel="stylesheet" href="../../css/tooplate-style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -47,7 +44,7 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
       </div>
     </section>
     <div class="video-background">
-      <video autoplay muted loop playsinline>
+      <video id="background-video" muted loop playsinline>
         <source src="../../videos/video.mp4" type="video/mp4" />
         Tu navegador no soporta el video.
       </video>

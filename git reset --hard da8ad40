@@ -1,0 +1,22 @@
+[33m29a055e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mGustavo[m[33m, [m[1;31morigin/Gustavo[m[33m)[m Actualizacion del Mundo giratorio detras del catalogo
+[33mb640d70[m Actualizacion del Mundo giratorio detras del catalogo
+[33m5506684[m Actualizacion del Mundo giratorio detras del catalogo
+[33mda8ad40[m actualizacion para celulares
+[33m5ba85b5[m Actualizacion para Celulares
+[33mc1e55d6[m Arreglo de detalles del producto
+[33m3530480[m fondo de producto_detalle.php intentando solucionar
+[33m8512827[m Solucion conexion base de datos
+[33m77f83de[m Fix: agregar soporte para PDO PostgreSQL en Docker
+[33mf6d29da[m Habilitar PDO PostgreSQL en Dockerfile
+[33m10a908e[m Probando Base de datos online
+[33m6b75afe[m Agregar Dockerfile para deploy en Render
+[33m810b291[m Configurar deploy completo en Render
+[33me0a6f9d[m Limpieza de archivos y reorganización del proyecto
+[33mabf63d0[m 5to commit Agregar archivo sql para que puedan descargar
+[33m79052ad[m 4to commit enlazar Home y Catalogo
+[33m1c84f23[m 4to commit solucion de error Agregar Productos
+[33m5b5b695[m Errores corregidos del boton cambiarCantidad
+[33mff7cab3[m  Centraliza JS en carrito.js y muestra el carrito flotante en producto_detalle.php
+[33m31fbaf8[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m Estructuracion de archivos
+[33maaa2af0[m Primer commit
+[33ma0af098[m Initial commit
