@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: bytezar
+    env: php
+    plan: free
+    branch: Gustavo
+    buildCommand: ""
+    startCommand: ""
+    rootDir: .
