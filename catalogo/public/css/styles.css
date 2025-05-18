@@ -63,27 +63,32 @@
 
 /* Botón hamburguesa */
 .navbar-toggler {
-  border: none;
-  padding-top: 10px;
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
   background-color: transparent !important;
+  border: none;
+  border-radius: 0.25rem;
+  align-self: center;
 }
-
 .navbar-toggler-icon {
-  background-image: none;
-  position: relative;
-  width: 30px;
-  height: 22px;
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  content: "";
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(41, 202, 142, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  transition: background-image 0.3s ease-in-out;
+
 }
 
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after,
-.navbar-toggler-icon div {
-  content: '';
-  background-color: #29ca8e;
-  height: 3px;
-  display: block;
-  margin: 5px 0;
-  border-radius: 2px;
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 
@@ -402,5 +407,20 @@ body.catalogo {
   #contadorCarrito {
     font-size: 0.65rem;
     padding: 3px 6px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 8px 0;
   }
 }
