@@ -114,7 +114,7 @@ h1, h2 {
 }
 
 body.catalogo {
-  padding-top: 110px; /* Ajustado a la altura real de tu navbar */
+  padding-top: 60px; /* Ajustado a la altura real de tu navbar */
 }
 /* TARJETAS DE PRODUCTO */
 .card {
@@ -137,6 +137,17 @@ body.catalogo {
   max-height: 200px;
   object-fit: cover;
   width: 100%;
+}
+
+/* Imagen grande para producto_detalle */
+.detalle-img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
 }
 
 .descripcion-producto {

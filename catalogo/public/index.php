@@ -66,7 +66,7 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         <li class="nav-item"><a class="nav-link" href="../../index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="../../catalogo/public">Catálogo</a></li>
+        <li class="nav-item"><a class="nav-link login-brillante" href="../../catalogo/public">Catálogo</a></li>
         <li class="nav-item"><a class="nav-link" href="../../index.html#feature">Destacados</a></li>
         <li class="nav-item"><a class="nav-link" href="../../index.html#about">¿Quiénes Somos?</a></li>
         <li class="nav-item"><a class="nav-link" href="../../contactos.html">Contactos</a></li>

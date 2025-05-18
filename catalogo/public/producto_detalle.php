@@ -31,7 +31,7 @@ if (!$producto) {
 
 </head>
 
-<body>
+<body class="catalogo">
     <!-- PRE LOADER -->
 <section class="preloader" id="main-loader">
   <div class="spinner"></div>
@@ -81,7 +81,7 @@ if (!$producto) {
       <div class="col-md-6">
         <img src="<?= htmlspecialchars($producto['imagen']) ?>"
              alt="Imagen del producto"
-             class="card-img-top">
+             class="detalle-img">
       </div>
       <div class="col-md-6 card-body">
         <h2 class="card-title"><?= htmlspecialchars($producto['nombre']) ?></h2>
