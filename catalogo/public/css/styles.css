@@ -293,3 +293,114 @@ body.catalogo {
   object-fit: cover;
   z-index: -1;
 }
+
+  /*---------------------------------------
+     FOOTER              
+  -----------------------------------------*/
+
+  footer {
+    padding-bottom: 80px;
+  }
+
+  .copyright-text p {
+    margin: 5px;
+  }
+
+  /* ========================
+   ADAPTACIÓN RESPONSIVE
+=========================== */
+
+/* Navbar: más compacto en pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .navbar-nav {
+    margin-left: 0;
+    gap: 10px;
+  }
+
+  .navbar .nav-link {
+    padding: 6px 12px;
+    font-size: 15px;
+  }
+
+  .navbar-brand img {
+    width: 120px;
+  }
+
+  body.catalogo {
+    padding-top: 75px; /* ajustar según altura del navbar móvil */
+  }
+}
+
+/* Producto Detalle: mejor alineación en móvil */
+@media (max-width: 768px) {
+  .card.detalle-fondo-blanco .row {
+    flex-direction: column;
+  }
+
+  .card .detalle-img {
+    max-height: 300px;
+  }
+
+  .card-body {
+    padding-top: 1rem;
+  }
+}
+
+/* Tarjetas de producto: ajustar altura mínima */
+@media (max-width: 576px) {
+  .card {
+    min-height: auto;
+  }
+
+  .descripcion-producto {
+    min-height: auto;
+  }
+}
+
+/* Footer: mejorar espaciado y visibilidad */
+@media (max-width: 768px) {
+  footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+  }
+
+  footer img {
+    max-width: 150px;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
+
+  .footer .col-md-2 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Carrito flotante: más chico y menos invasivo */
+@media (max-width: 576px) {
+  #carritoFlotante {
+    width: 90%;
+    right: -100%;
+  }
+
+  .carrito-cerrado {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+
+  #contadorCarrito {
+    font-size: 0.65rem;
+    padding: 3px 6px;
+  }
+}

@@ -304,11 +304,17 @@ http://www.tooplate.com/view/2106-soft-landing
     background-color: transparent;
   }
 
-  .custom-navbar .navbar-toggle .icon-bar {
-    background: #29ca8e;
-    border-color: transparent;
+  .navbar-toggle .icon-bar {
+    background-color: #29ca8e;
+    height: 3px;
+    margin: 5px 0;
+    border-radius: 1px;
   }
 
+   html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
   @media(min-width:768px) {
     .custom-navbar {
       border-bottom: 0;
@@ -335,9 +341,29 @@ http://www.tooplate.com/view/2106-soft-landing
       color: #ffffff;
     }
   }
+  @media (max-width: 767px) {
+  .section {
+    margin-bottom: 40px;
+  }
+}
+  
+@media (max-width: 480px) {
+  .btn, .section-btn {
+    width: auto;
+    display: inline-block;
+  }
+}
 
+@media (max-width: 576px) {
+  .whatsapp-text {
+    display: none !important;
+  }
 
-
+  .whatsapp-float {
+    padding: 12px;
+    border-radius: 50%;
+  }
+}
   /*---------------------------------------
       HOME          
   -----------------------------------------*/

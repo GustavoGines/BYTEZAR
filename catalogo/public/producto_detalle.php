@@ -113,72 +113,69 @@ if (!$producto) {
 </div>
 
      <!-- FOOTER -->
-<footer id="footer" data-stellar-background-ratio="0.5" style="background: #f8f8f8; padding-top: 40px; padding-bottom: 40px;">
+<footer class="bg-light text-center text-dark py-5 mt-5">
   <div class="container">
-    <div class="row text-center">
+    <div class="row">
 
       <!-- Logo e información del local -->
-      <div class="col-md-12">
-        <img src="../../images/bytezar_imagen.png" alt="Logo Bytezar" style="width: 200px; height: auto; margin-bottom: 15px;">
+      <div class="col-12 mb-4">
+        <img src="../../images/bytezar_imagen.png" alt="Logo Bytezar" class="img-fluid mb-3" style="max-width: 200px;">
         <p style="font-size: 16px; color: #333;">
           Bytezar es el bazar de la tecnología. Ofrecemos laptops, smartphones y asesoramiento especializado en el corazón del centro de Formosa.
         </p>
-        <hr style="margin: 30px auto; width: 60%;">
+        <hr class="my-4" style="width: 60%;">
       </div>
 
       <!-- Fotos del equipo -->
-      <div class="col-md-12">
-        <h4 style="color: #222; margin-bottom: 20px;">Equipo de Desarrollo</h4>
-        <div class="row justify-content-center">
-
-          <!-- Repetir este bloque para cada integrante -->
-          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="../../images/gerardo_medina.PNG" alt="Integrante 1" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="font-size: 14px; color: #333;">Gerardo Medina</p>
+      <div class="col-12 mb-4">
+        <h4 class="mb-4" style="color: #222;">Equipo de Desarrollo</h4>
+        <div class="row justify-content-center g-3">
+          <!-- Integrante 1 -->
+          <div class="col-6 col-sm-4 col-md-2 text-center">
+            <img src="../../images/gerardo_medina.PNG" alt="Gerardo Medina" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
+            <p class="mb-0" style="font-size: 14px; color: #333;">Gerardo Medina</p>
           </div>
-          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="../../images/jajo.enc" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="font-size: 14px; color: #333;">Javier Adrián Quintana</p>
+          <!-- Integrante 2 -->
+          <div class="col-6 col-sm-4 col-md-2 text-center">
+            <img src="../../images/jajo.enc" alt="Javier Adrián Quintana" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
+            <p class="mb-0" style="font-size: 14px; color: #333;">Javier Adrián Quintana</p>
           </div>
-              <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="../../images/gustavo_alejandro.jpg" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="font-size: 14px; color: #333;">Gustavo Alejandro Ginés</p>
+          <div class="col-6 col-sm-4 col-md-2 text-center">
+            <img src="../../images/gustavo_alejandro.jpg" alt="Gustavo Alejandro Ginés" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
+            <p class="mb-0" style="font-size: 14px; color: #333;">Gustavo Alejandro Ginés</p>
           </div>
-              <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="../../images/leandro_Nacimento.jpg" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="font-size: 14px; color: #333;">Leandro Nacimento</p>
+          <div class="col-6 col-sm-4 col-md-2 text-center">
+            <img src="../../images/leandro_Nacimento.jpg" alt="Leandro Nacimento" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
+            <p class="mb-0" style="font-size: 14px; color: #333;">Leandro Nacimento</p>
           </div>
-              <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="../../images/Gabriela_Heretichi.jpg" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="font-size: 14px; color: #333;">Gabriela Heretichi</p>
+          <div class="col-6 col-sm-4 col-md-2 text-center">
+            <img src="../../images/Gabriela_Heretichi.jpg" alt="Gabriela Heretichi" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
+            <p class="mb-0" style="font-size: 14px; color: #333;">Gabriela Heretichi</p>
           </div>
-              <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="../../images/jajo.enc" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="font-size: 14px; color: #333;">Javier Adrián Quintana</p>
+          <div class="col-6 col-sm-4 col-md-2 text-center">
+            <img src="../../images/jajo.enc" alt="Javier Adrián Quintana" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
+            <p class="mb-0" style="font-size: 14px; color: #333;">Javier Adrián Quintana</p>
           </div>
-          <!-- ... agregar los 9 integrantes aquí ... -->
-
         </div>
       </div>
 
       <!-- Presentación académica -->
-      <div class="col-md-12" style="margin-top: 30px;">
-         <img src="../../images/UTN_FRRE.png" alt="Logo Bytezar" style="width: 200px; height: auto; margin-bottom: 15px;">
-        
+      <div class="col-12 mt-4">
+        <img src="../../images/UTN_FRRE.png" alt="UTN" class="img-fluid mb-3" style="max-width: 200px;">
         <p style="font-size: 14px; color: #777;">
-
-          Universidad Tecnologica Nacional  - Sede Formosa <br>
-          Tecnicatura en Programación <br>
+          Universidad Tecnológica Nacional - Sede Formosa<br>
+          Tecnicatura en Programación<br>
           Materia: Metodología de Sistemas - Docente<br>
-          <strong>Facundo Leonel Verón</strong> - faccu.veron92@gmail.com <br>
+          <strong>Facundo Leonel Verón</strong> - faccu.veron92@gmail.com<br>
           Comisión: 2.2
         </p>
-        <p style="font-size: 12px; color: #aaa;">&copy; 2025 Bytezar</p>
+        <p class="text-muted" style="font-size: 12px;">&copy; 2025 Bytezar</p>
       </div>
 
     </div>
   </div>
 </footer>
+
 <!-- Script del carrito y dependencias -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/carrito.js"></script>
