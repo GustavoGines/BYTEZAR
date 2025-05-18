@@ -61,10 +61,10 @@
         <!-- MENU LINKS -->
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index.html" class="smoothScroll">Inicio</a></li>
+            <li class="active"><a href="index.html" class="smoothScroll">Inicio</a></li>
             <li><a href="./catalogo/public" class="smoothScroll">Catalogo</a></li>
             <li><a href="#feature" class="smoothScroll">Destacados</a></li>
-            <li><a href="#about" class="smoothScroll">Quienes Somos?</a></li>
+            <li><a href="#about" class="smoothScroll ">Quienes Somos?</a></li>
             <li><a href="contactos.html" class="smoothScroll">Contactos</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -502,6 +502,36 @@
           imgSmartphone.style.display = "block";
         });
       });
+      
+         document.addEventListener("DOMContentLoaded", function () {
+     const secciones = document.querySelectorAll("section[id]");
+     const navItems = document.querySelectorAll(".navbar-nav > li > a[href^='#']");
+   
+     function resaltarItemActivo() {
+       let scroll = window.scrollY + 100;
+   
+       let seccionActiva = null;
+       secciones.forEach(seccion => {
+         if (scroll >= seccion.offsetTop) {
+           seccionActiva = seccion.getAttribute("id");
+         }
+       });
+       if (!seccionActiva && secciones.length > 0) {
+  seccionActiva = secciones[0].getAttribute("id");
+}
+       navItems.forEach(link => {
+         const parentLi = link.parentElement;
+         parentLi.classList.remove("active");
+         const targetId = link.getAttribute("href").substring(1);
+         if (targetId === seccionActiva) {
+           parentLi.classList.add("active");
+         }
+       });
+     }
+   
+     window.addEventListener("scroll", resaltarItemActivo);
+     resaltarItemActivo(); // Ejecutar al cargar
+   });
     </script>
   </body>
 </html>
