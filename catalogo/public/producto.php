@@ -15,13 +15,13 @@ $imagen = $producto['imagen'] ?: 'https://via.placeholder.com/400x300.png?text=I
     </a>
     <div class="card-body">
         <!-- Nombre clickeable -->
-        <h5 class="card-title">
+        <h4 class="card-title">
             <a href="producto_detalle.php?id=<?= $producto['id'] ?>" class="text-decoration-none text-dark">
                 <?= htmlspecialchars($producto['nombre']) ?>
             </a>
-        </h5>
-        <p class="card-text descripcion-producto"><?= htmlspecialchars($producto['descripcion']) ?></p>
-        <p class="card-text descripcion-producto"><strong>Precio:</strong> $<?= number_format($producto['precio'], 2, ',', '.') ?></p>
+        </h4>
+        <p class="descripcion-producto"><?= htmlspecialchars($producto['descripcion']) ?></p>
+        <p><strong>Precio:</strong> $<?= number_format($producto['precio'], 2, ',', '.') ?></p>
         
         <!-- Botón para agregar al carrito -->
         <button class="btn btn-primary agregarCarrito"

@@ -9,20 +9,18 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/tooplate-style.css" />
+    <link rel="stylesheet" href="./css/tooplate-styles.css" />
 </head>
 <body>
     <!-- PRE LOADER -->
-    <section class="preloader">
-        <div class="spinner">
-            <span class="spinner-rotate"></span>
-        </div>
+    <section class="preloader" id="main-loader">
+        <div class="spinner"></div>
     </section>
 
     <!-- VIDEO BACKGROUND -->
     <div class="video-background">
       <video autoplay muted loop playsinline>
-        <source src="../videos/video.mp4" type="video/mp4" />
+        <source src="videos/video.mp4" type="video/mp4" />
         Tu navegador no soporta el video.
       </video>
     </div>
@@ -169,8 +167,73 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <!-- Insertar aquí el mismo footer de las otras páginas -->
+     <!-- FOOTER -->
+<footer id="footer" data-stellar-background-ratio="0.5" style="background: #f8f8f8; padding-top: 40px; padding-bottom: 40px;">
+  <div class="container">
+    <div class="row text-center">
+
+      <!-- Logo e información del local -->
+      <div class="col-md-12">
+        <img src="images/bytezar_imagen.png" alt="Logo Bytezar" style="width: 200px; height: auto; margin-bottom: 15px;">
+        <p style="font-size: 16px; color: #333;">
+          Bytezar es el bazar de la tecnología. Ofrecemos laptops, smartphones y asesoramiento especializado en el corazón del centro de Formosa.
+        </p>
+        <hr style="margin: 30px auto; width: 60%;">
+      </div>
+
+      <!-- Fotos del equipo -->
+      <div class="col-md-12">
+        <h4 style="color: #222; margin-bottom: 20px;">Equipo de Desarrollo</h4>
+        <div class="row justify-content-center">
+
+          <!-- Repetir este bloque para cada integrante -->
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="images/gerardo_medina.PNG" alt="Integrante 1" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Gerardo Medina</p>
+          </div>
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="images/jajo.enc" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Javier Adrián Quintana</p>
+          </div>
+              <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="images/gustavo_alejandro.jpg" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Gustavo Alejandro Ginés</p>
+          </div>
+              <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="images/leandro_Nacimento.jpg" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Leandro Nacimento</p>
+          </div>
+              <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="images/Gabriela_Heretichi.jpg" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Gabriela Heretichi</p>
+          </div>
+              <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="images/jajo.enc" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Javier Adrián Quintana</p>
+          </div>
+          <!-- ... agregar los 9 integrantes aquí ... -->
+
+        </div>
+      </div>
+
+      <!-- Presentación académica -->
+      <div class="col-md-12" style="margin-top: 30px;">
+         <img src="images/UTN_FRRE.png" alt="Logo Bytezar" style="width: 200px; height: auto; margin-bottom: 15px;">
+        
+        <p style="font-size: 14px; color: #777;">
+
+          Universidad Tecnologica Nacional  - Sede Formosa <br>
+          Tecnicatura en Programación <br>
+          Materia: Metodología de Sistemas - Docente<br>
+          <strong>Facundo Leonel Verón</strong> - faccu.veron92@gmail.com <br>
+          Comisión: 2.2
+        </p>
+        <p style="font-size: 12px; color: #aaa;">&copy; 2025 Bytezar</p>
+      </div>
+
+    </div>
+  </div>
+</footer>
 
     <!-- SCRIPTS -->
     <script src="js/jquery.js"></script>

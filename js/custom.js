@@ -6,11 +6,11 @@
     window.addEventListener('load', function () {
       const preloader = document.getElementById('main-loader');
       if (preloader) {
-        preloader.style.transition = 'opacity 0.2s ease';
+        preloader.style.transition = 'opacity 0.1s ease';
         preloader.style.opacity = '0';
         setTimeout(() => {
           preloader.style.display = 'none';
-        }, 200); // ← ESTE NÚMERO ES EL TIEMPO TOTAL EN MILISEGUNDOS
+        }, 100); // ← ESTE NÚMERO ES EL TIEMPO TOTAL EN MILISEGUNDOS
       }
     });
 

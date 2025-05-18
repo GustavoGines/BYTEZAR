@@ -1,0 +1,284 @@
+/* ============================
+   ESTILOS CATALOGO - Bootstrap 5
+=============================== */
+
+/* NAVBAR MODERNA */
+.navbar {
+  background-color: #000 !important;
+  padding: 25px 0;
+  margin-bottom: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.navbar-brand {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.navbar-brand img {
+  width: 150px;
+}
+
+/* Menú principal */
+.navbar-nav {
+  margin-left: 6em;
+  gap: 22px; /* Espaciado exacto entre ítems */
+}
+
+.navbar .nav-link {
+  font-size: 16px;
+  font-weight: normal;
+  color: #f0f0f0 !important;
+  padding: 8px 22px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  background-color: transparent;
+}
+
+/* Hover general */
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  background-color: transparent;
+  color: #29ca8e !important;
+}
+
+/* Login especial */
+.navbar .nav-link.login-brillante {
+  color: #29ca8e !important;
+}
+
+.navbar .nav-link.login-brillante:hover {
+  color: #6ef19d !important;
+  text-shadow: 0 0 8px rgba(111, 255, 180, 0.8);
+}
+
+/* Active item (simula .nav li.active > a) */
+.navbar .nav-link.active {
+  background-color: transparent;
+  color: #29ca8e !important;
+  text-shadow: 0 0 8px rgba(111, 255, 180, 0.8);
+}
+
+/* Botón hamburguesa */
+.navbar-toggler {
+  border: none;
+  padding-top: 10px;
+  background-color: transparent !important;
+}
+
+.navbar-toggler-icon {
+  background-image: none;
+  position: relative;
+  width: 30px;
+  height: 22px;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon div {
+  content: '';
+  background-color: #29ca8e;
+  height: 3px;
+  display: block;
+  margin: 5px 0;
+  border-radius: 2px;
+}
+
+
+
+
+
+/* ENCABEZADOS */
+h1, h2 {
+  color: #fff;
+  font-weight: 300;
+  text-align: center;
+}
+
+/* CATÁLOGO SOBRE VIDEO */
+.productos-sobre-video {
+  background: rgba(0,0,0,0.75);
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.encabezado-catalogo {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+body.catalogo {
+  padding-top: 110px; /* Ajustado a la altura real de tu navbar */
+}
+/* TARJETAS DE PRODUCTO */
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  background: rgba(255,255,255,0.95);
+  color: #000;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card .card-img-top {
+  max-height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.descripcion-producto {
+  color: #333;
+  font-size: 14px;
+  min-height: 60px;
+}
+
+/* BOTONES */
+.btn-primary {
+  background-color: #007bff !important;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3 !important;
+}
+
+/* FILTRO CATEGORÍAS */
+.form-control {
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* CARRITO FLOTANTE */
+#carritoFlotante {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  padding: 20px;
+  background: rgba(0,0,0,0.9);
+  color: #fff;
+  transition: right 0.3s;
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+#carritoFlotante h2 {
+  text-align: center;
+}
+
+#carritoFlotante .producto {
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #333;
+  border-radius: 5px;
+}
+
+#carritoFlotante .producto span {
+  display: inline-block;
+  width: 70%;
+}
+
+#carritoFlotante .producto .precio {
+  font-weight: bold;
+}
+
+/* BOTÓN CARRITO */
+#abrirCarritoBtn,
+.carrito-cerrado {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 9999;
+  background: #ff6f61;
+  color: #fff;
+  border: none;
+}
+
+#abrirCarritoBtn:hover {
+  background: #e55e50;
+}
+
+.carrito-cerrado {
+  background: #28a745;
+  padding: 15px 25px;
+}
+
+#contadorCarrito {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 0.75rem;
+  padding: 4px 7px;
+  border-radius: 50%;
+  background: #dc3545;
+  color: #fff;
+}
+ /* Efecto visual para el carrito cuando se actualiza */
+ #carritoFlotante.destacado {
+     box-shadow: 0 0 20px 5px rgba(0, 123, 255, 0.7) !important;
+     transition: box-shadow 0.3s ease;
+   }
+/* MENSAJES EMERGENTES */
+.mensaje {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+.mensaje.error {
+  background: #dc3545;
+}
+
+.fade-out {
+  animation: desaparecer 0.5s forwards;
+}
+
+@keyframes desaparecer {
+  from {opacity: 1;}
+  to {opacity: 0; height: 0; margin: 0; padding: 0;}
+}
+
+/* VIDEO DE FONDO */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
