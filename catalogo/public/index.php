@@ -54,12 +54,12 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 <!-- NAVBAR Bootstrap 5 -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
   <div class="container">
     <a class="navbar-brand" href="../../index.html">
       <img src="../../images/bytezar_imagen.png" alt="BYTEZAR" style="width: 150px;">
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -83,7 +83,7 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
 
 <!-- Contenido -->
 <div class="container mt-5 pt-5">
-  <h1 class="mb-4 text-center text-white ">Catálogo de Productos</h1>
+  <h1 class="mb-4 text-center  ">Catálogo de Productos</h1>
 
   <!-- Filtro por categoría -->
 <form action="index.php" method="get" class="mb-4">

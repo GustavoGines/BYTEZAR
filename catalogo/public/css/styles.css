@@ -1,11 +1,15 @@
 /* ============================
-   ESTILOS CATALOGO - Bootstrap 5
+   ESTILOS CATALOGO - Bootstrap 5 STYLES.CSS
 =============================== */
+
+html {
+  scroll-behavior: smooth;
+}
 
 /* NAVBAR MODERNA */
 .navbar {
-  background-color: #000 !important;
-  padding: 25px 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 16px 0;
   margin-bottom: 0;
   border: none;
   box-shadow: none;
@@ -24,12 +28,12 @@
 
 /* Menú principal */
 .navbar-nav {
-  margin-left: 6em;
-  gap: 22px; /* Espaciado exacto entre ítems */
+  margin-left: 11.5em;
+  gap: 24px; /* Espaciado exacto entre ítems */
 }
 
 .navbar .nav-link {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: normal;
   color: #f0f0f0 !important;
   padding: 8px 22px;
@@ -54,12 +58,7 @@
   text-shadow: 0 0 8px rgba(111, 255, 180, 0.8);
 }
 
-/* Active item (simula .nav li.active > a) */
-.navbar .nav-link.active {
-  background-color: transparent;
-  color: #29ca8e !important;
-  text-shadow: 0 0 8px rgba(111, 255, 180, 0.8);
-}
+
 
 /* Botón hamburguesa */
 .navbar-toggler {
@@ -89,11 +88,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+    padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 0;
+  
 }
-
-
-
-
 
 /* ENCABEZADOS */
 h1, h2 {
@@ -317,6 +316,7 @@ body.catalogo {
 
 /* Navbar: más compacto en pantallas pequeñas */
 @media (max-width: 768px) {
+  
   .navbar {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -324,7 +324,7 @@ body.catalogo {
 
   .navbar-nav {
     margin-left: 0;
-    gap: 10px;
+    gap: 2px;
   }
 
   .navbar .nav-link {
@@ -421,6 +421,34 @@ body.catalogo {
   }
 
   .navbar-nav .nav-item {
-    margin: 8px 0;
+    margin: 2px 0;
+  }
+
+  .navbar-toggler {
+  margin-right: 0.75rem;
+  padding: 10px 0;
+  }
+}
+
+/* Corrección para cuando el navbar está expandido en mobile */
+@media (max-width: 767px) {
+  .navbar-collapse {
+    background-color: #000 !important;
+    color: #fff;
+    padding: 10px 0;
+  }
+
+  .navbar .nav-link {
+    color: #fff !important;
+  }
+
+  .navbar .nav-link:hover {
+    color: #29ca8e !important;
+    background-color: transparent !important;
+    text-shadow: 0 0 8px rgba(111, 255, 180, 0.8);
+  }
+    .navbar-toggler {
+    margin-right: 0.75rem;
+    padding: 10px 0;
   }
 }
