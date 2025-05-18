@@ -20,10 +20,13 @@ html {
   font-size: 25px;
   font-weight: 500;
   letter-spacing: -1px;
+  margin-left: 0 !important;
+  
 }
 
 .navbar-brand img {
   width: 150px;
+  
 }
 
 /* Menú principal */
@@ -88,8 +91,8 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-    padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 10px;
+  padding-right: 20px;
   margin-top: 0;
   
 }

@@ -46,12 +46,12 @@ if (!$producto) {
 </div>
 
 <!-- NAVBAR Bootstrap 5 -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand me-auto" href="../../index.html">
       <img src="../../images/bytezar_imagen.png" alt="BYTEZAR" style="width: 150px;">
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -63,7 +63,7 @@ if (!$producto) {
         <li class="nav-item"><a class="nav-link" href="../../index.html#about">¿Quiénes Somos?</a></li>
         <li class="nav-item"><a class="nav-link" href="../../contactos.html">Contactos</a></li>
       </ul>
-     <ul class="navbar-nav ms-auto">
+     <ul class="navbar-nav me-auto">
        <li class="nav-item"><a class="nav-link login-brillante" href="../../login.html">Login</a></li>
      </ul> 
     </div>
