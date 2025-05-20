@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,8 +19,6 @@
 
 </head>
 <body>
-<?php session_start(); ?>
-
 <!-- ALERTAS DE LOGIN / LOGOUT -->
 <div id="alert-container" class="text-center" style="margin-top: 90px; z-index: 1050; position: relative;"></div>
 <script>
