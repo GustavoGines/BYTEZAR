@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . '/../../config/db.php';
-include_once '../backend/includes/navbar_usuario.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // 1. Sanitizar datos del formulario

@@ -238,7 +238,7 @@ if (session_status() === PHP_SESSION_NONE) {
   Ofrecemos lo último en laptops, smartphones, accesorios y servicios técnicos. 
   Nuestro compromiso es brindarte una experiencia única, con asesoramiento personalizado y productos de calidad.
 </p>
-<a href="contactos.html" class="btn">Contactanos</a>
+<a href="contactos.php" class="btn">Contactanos</a>
 
 </div>
 

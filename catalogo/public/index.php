@@ -1,4 +1,7 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require_once __DIR__ . '/../../backend/config/db.php';
 
 // Obtener categorías
@@ -76,7 +79,7 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
         <li class="nav-item"><a class="nav-link login-brillante" href="../../catalogo/public">Catálogo</a></li>
         <li class="nav-item"><a class="nav-link" href="../../index.php#feature">Destacados</a></li>
         <li class="nav-item"><a class="nav-link" href="../../index.php#about">¿Quiénes Somos?</a></li>
-        <li class="nav-item"><a class="nav-link" href="../../contactos.html">Contactos</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../contactos.php">Contactos</a></li>
       </ul>
      <?php include_once '../../backend/includes/navbar_usuario.php'; ?>
     </div>

@@ -51,7 +51,7 @@
                     <li><a href="./catalogo/public/index.php" class="smoothScroll">Catálogo</a></li>
                     <li><a href="index.php#feature" class="smoothScroll">Destacados</a></li>
                     <li><a href="index.php#about" class="smoothScroll">Quiénes Somos</a></li>
-                    <li class="active"><a href="contactos.html" class="smoothScroll">Contactos</a></li>
+                    <li class="active"><a href="contactos.php" class="smoothScroll">Contactos</a></li>
                 </ul>
                 <?php include 'backend/includes/navbar_usuario.php'; ?>
             </div>
