@@ -1,4 +1,7 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 // Este archivo se incluye dentro de un foreach desde index.php
 // y espera una variable $producto con los datos del producto
 
