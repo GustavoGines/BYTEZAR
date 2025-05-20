@@ -46,6 +46,8 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
   <link rel="stylesheet" href="../../css/owl.theme.default.min.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400">
   <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   
 </head>
 <body class="catalogo">

@@ -44,10 +44,10 @@ if (session_status() === PHP_SESSION_NONE) {
   
 </script>
 
-<!-- PRE LOADER 
+<!-- PRE LOADER -->
 <section class="preloader" id="main-loader">
   <div class="spinner"></div>
-</section>-->
+</section>
 <div class="video-background">
   <video id="background-video"  autoplay muted loop playsinline>
     <source src="videos/video.mp4" type="video/mp4" />
