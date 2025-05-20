@@ -158,7 +158,9 @@ http://www.tooplate.com/view/2106-soft-landing
   }
 
 
-  
+  .is-invalid {
+    border-color: red;
+  }
 
   /*---------------------------------------
      BUTTONS               
@@ -250,7 +252,7 @@ http://www.tooplate.com/view/2106-soft-landing
   .custom-navbar {
     border: none;
     margin-bottom: 0;
-    padding: 25px 0;
+    padding: 25px ;
   }
 
   .custom-navbar .navbar-brand {
@@ -268,92 +270,153 @@ http://www.tooplate.com/view/2106-soft-landing
     margin-left: 6em;
   }
 
-  .custom-navbar .nav li a {
-    font-size: 16px;
-    font-weight: normal;
-    color: #f0f0f0;
-    padding-right: 22px;
-    padding-left: 22px;
-  }
+/* Estilo unificado para todos los ítems del navbar */
+.custom-navbar .navbar-nav > li > a,
+.custom-navbar .navbar-right > li > a {
+  font-size: 16px;
+  font-weight: normal;
+  color: #f0f0f0;
+  padding: 8px 22px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: normal;
+  background: transparent;
+}
+.custom-navbar .fa-user,
+.custom-navbar .fa-sign-out {
+  font-size: 16px;
+  margin-top: 1px;
+}
+/* Hover */
+.custom-navbar .nav li a:hover {
+  color: #29ca8e;
+  text-shadow: none;
+}
 
-  .custom-navbar .nav li a:hover {
-    background: transparent;
-    color: #29ca8e;
-  }
+/* Ítem activo */
+.custom-navbar .nav li.active > a {
+  color: #29ca8e;
+  background-color: transparent;
+}
 
-  .custom-navbar .navbar-nav > li > a:hover,
-  .custom-navbar .navbar-nav > li > a:focus {
-    background-color: transparent;
-  }
-
-  .custom-navbar .nav li.active > a {
-    background-color: transparent;
-    color: #29ca8e;
-  }
-
- .custom-navbar .nav li.active > a:hover {
-  color: #6ef19d !important;       /* Verde más claro al pasar el mouse */
+.custom-navbar .nav li.active > a:hover {
+  color: #6ef19d !important;
   text-shadow: 0 0 8px rgba(111, 255, 180, 0.8);
 }
-  .custom-navbar .navbar-toggle {
-    border: none;
-    padding-top: 10px;
+
+.custom-navbar .navbar-toggle {
+  border: none;
+  padding-top: 10px;
+}
+
+.custom-navbar .navbar-toggle {
+  background-color: transparent;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: #29ca8e;
+  height: 3px;
+  margin: 5px 0;
+  border-radius: 1px;
+}
+
+ html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+/* ========================= */
+/* ESTILOS RESPONSIVOS PARA BOOTSTRAP 3 */
+/* ========================= */
+
+/* Navbar en pantallas grandes */
+@media (min-width: 768px) {
+  .custom-navbar {
+    border-bottom: 0;
+    background: transparent;
   }
 
-  .custom-navbar .navbar-toggle {
-    background-color: transparent;
+  .custom-navbar.top-nav-collapse {
+    background: #ffffff;
+    -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    text-align: center;
   }
 
-  .navbar-toggle .icon-bar {
-    background-color: #29ca8e;
-    height: 3px;
-    margin: 5px 0;
-    border-radius: 1px;
+  .top-nav-collapse .navbar-brand {
+    color: #252525;
   }
 
-   html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+  .top-nav-collapse .nav li a {
+    color: #575757;
   }
-  @media(min-width:768px) {
-    .custom-navbar {
-      border-bottom: 0;
-      background: 0 0; 
-    }
 
-    .custom-navbar.top-nav-collapse {
-      background: #ffffff;
-      -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
-      -moz-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
-      box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
-      padding: 10px 0;
-    }
-
-    .top-nav-collapse .navbar-brand {
-      color: #252525;
-    }
-
-    .top-nav-collapse .nav li a {
-      color: #575757;
-    }
-
-    .top-nav-collapse .nav .section-btn a {
-      color: #ffffff;
-    }
-  }
-  @media (max-width: 767px) {
-  .section {
-    margin-bottom: 40px;
+  .top-nav-collapse .nav .section-btn a {
+    color: #ffffff;
   }
 }
-  
+
+@media (max-width: 767px) {
+  .navbar-collapse {
+    background-color: #000 !important;
+    padding: 10px 0;
+    
+    flex-direction: column;
+    align-items: center; /* ✅ CENTRA todo el contenido */
+  }
+
+  .navbar-nav {
+    float: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ✅ CENTRA los <li> */
+    width: 100%;
+  }
+
+  .navbar-nav > li {
+    float: none;
+    display: inline-block;
+    margin: 6px 0; /* Espaciado vertical */
+  }
+
+  .navbar-nav > li > a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff !important;
+    background-color: transparent;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .navbar-nav > li > a:hover {
+    color: #29ca8e !important;
+    background-color: transparent;
+    text-shadow: 0 0 8px rgba(111, 255, 180, 0.8);
+  }
+
+  .navbar-toggle {
+    margin-right: 0.75rem;
+    padding: 10px 0;
+  }
+}
+
+
+
+
+/* Botones en pantallas chicas */
 @media (max-width: 480px) {
-  .btn, .section-btn {
+  .btn,
+  .section-btn {
     width: auto;
     display: inline-block;
   }
 }
 
+/* WhatsApp flotante en pantallas chicas */
 @media (max-width: 576px) {
   .whatsapp-text {
     display: none !important;
@@ -364,6 +427,8 @@ http://www.tooplate.com/view/2106-soft-landing
     border-radius: 50%;
   }
 }
+
+
   /*---------------------------------------
       HOME          
   -----------------------------------------*/
@@ -1095,3 +1160,12 @@ http://www.tooplate.com/view/2106-soft-landing
     transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
+.logout-link {
+  color: #e74c3c !important; /* rojo fuerte */
+  font-weight: bold;
+}
+
+.logout-link:hover {
+  color: #c0392b !important; /* rojo más oscuro al pasar el mouse */
+  text-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
+}

@@ -159,7 +159,7 @@ body.catalogo {
 
 .descripcion-producto {
   color: #333;
-  font-size: 14px;
+  font-size: 18px;
   min-height: 60px;
 }
 
@@ -454,4 +454,13 @@ body.catalogo {
     margin-right: 0.75rem;
     padding: 10px 0;
   }
+}
+.logout-link {
+  color: #e74c3c !important; /* rojo fuerte */
+  font-weight: bold;
+}
+
+.logout-link:hover {
+  color: #c0392b !important; /* rojo más oscuro al pasar el mouse */
+  text-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
 }

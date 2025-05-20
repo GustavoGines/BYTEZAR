@@ -1,5 +1,5 @@
 <?php
-require '../backend/config/db.php';
+require_once __DIR__ . '/../../backend/config/db.php';
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 if (!$id) {
@@ -7,9 +7,20 @@ if (!$id) {
     exit;
 }
 
-$stmt = $pdo->prepare('SELECT * FROM productos WHERE id = ?');
-$stmt->execute([$id]);
-$producto = $stmt->fetch();
+// Producto base + categoría
+$sqlProducto = "SELECT p.*, c.categoria
+                FROM productos p
+                JOIN categorias c ON p.id_categoria = c.id
+                WHERE p.id = :id";
+$stmtProducto = $pdo->prepare($sqlProducto);
+$stmtProducto->execute(['id' => $id]);
+$producto = $stmtProducto->fetch(PDO::FETCH_ASSOC);
+
+// Detalles extendidos
+$sqlDetalle = "SELECT * FROM detalle_productos WHERE id_producto = :id";
+$stmtDetalle = $pdo->prepare($sqlDetalle);
+$stmtDetalle->execute(['id' => $id]);
+$detalle = $stmtDetalle->fetch(PDO::FETCH_ASSOC);
 
 if (!$producto) {
     header('Location: index.php');
@@ -48,7 +59,7 @@ if (!$producto) {
 <!-- NAVBAR Bootstrap 5 -->
 <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
   <div class="container">
-    <a class="navbar-brand me-auto" href="../../index.html">
+    <a class="navbar-brand me-auto" href="../../index.php">
       <img src="../../images/bytezar_imagen.png" alt="BYTEZAR" style="width: 150px;">
     </a>
     <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -57,15 +68,13 @@ if (!$producto) {
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link" href="../../index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../index.php">Inicio</a></li>
         <li class="nav-item"><a class="nav-link" href="../../catalogo/public">Catálogo</a></li>
-        <li class="nav-item"><a class="nav-link" href="../../index.html#feature">Destacados</a></li>
-        <li class="nav-item"><a class="nav-link" href="../../index.html#about">¿Quiénes Somos?</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../index.php#feature">Destacados</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../index.php#about">¿Quiénes Somos?</a></li>
         <li class="nav-item"><a class="nav-link" href="../../contactos.html">Contactos</a></li>
       </ul>
-     <ul class="navbar-nav me-auto">
-       <li class="nav-item"><a class="nav-link login-brillante" href="../../login.html">Login</a></li>
-     </ul> 
+     <?php include_once '../../backend/includes/navbar_usuario.php'; ?>
     </div>
   </div>
 </nav>
@@ -86,7 +95,19 @@ if (!$producto) {
       <div class="col-md-6 card-body">
         <h2 class="card-title"><?= htmlspecialchars($producto['nombre']) ?></h2>
         <p class="descripcion-producto"><strong>Categoría:</strong> <?= htmlspecialchars($producto['categoria']) ?></p>
-        <p class="descripcion-producto"><?= nl2br(htmlspecialchars($producto['descripcion'])) ?></p>
+        <?php if ($detalle): ?>
+         <ul>
+           <li><strong>Color:</strong> <?= htmlspecialchars($detalle['color']) ?></li>
+           <li><strong>Memoria RAM:</strong> <?= htmlspecialchars($detalle['memoria_ram']) ?></li>
+           <li><strong>Almacenamiento:</strong> <?= htmlspecialchars($detalle['almacenamiento']) ?></li>
+           <li><strong>Pantalla:</strong> <?= htmlspecialchars($detalle['pantalla']) ?></li>
+           <li><strong>Tipo de carga:</strong> <?= htmlspecialchars($detalle['tipo_carga']) ?></li>
+           <li><strong>Dimensiones:</strong> <?= htmlspecialchars($detalle['dimensiones']) ?></li>
+           <li><strong>Peso:</strong> <?= htmlspecialchars($detalle['peso']) ?></li>
+           <li><strong>Material:</strong> <?= htmlspecialchars($detalle['material']) ?></li>
+           <li><strong>Descripción:</strong> <?= nl2br(htmlspecialchars($detalle['descripcion'])) ?></li>
+         </ul>
+        <?php endif; ?>
         <h4 class="text-success">$<?= number_format($producto['precio'],2,',','.') ?></h4>
        
         <button class="btn btn-primary mt-3 agregarCarrito"

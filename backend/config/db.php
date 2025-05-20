@@ -18,4 +18,8 @@ try {
     die("❌ Error de conexión: " . $e->getMessage());
 }
 
+// CONECTAR A LA BASE DE DATOS POR MEDIO DE LA TERMINAL
+//COMANDO: psql -h dpg-d0hpjbq4d50c73dc1gb0-a.oregon-postgres.render.com -U prueba_db_n963_user prueba_db_n963
+//CONTRASEÑA: fz8hoDvUGGuFQw8sttoUE9WBI2E8gFDf 
 ?>
+

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="./css/tooplate-styles.css" />
+    
 </head>
 <body>
     <!-- PRE LOADER -->
@@ -24,7 +25,7 @@
         </div>
     </section>
       <div class="video-background">
-      <video autoplay muted loop playsinline>
+      <video id="background-video" autoplay muted loop playsinline>
         <source src="videos/video.mp4" type="video/mp4" />
         Tu navegador no soporta el video.
       </video>
@@ -39,22 +40,20 @@
                     <span class="icon icon-bar"></span>
                     <span class="icon icon-bar"></span>
                 </button>
-                <a href="index.html" class="navbar-brand">
+                <a href="index.php" class="navbar-brand">
                     <img src="images/bytezar_imagen.png" class="img-responsive" alt="Bytezar" style="width: 150px; margin-top: -10px;">
                 </a>
             </div>
 
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                   <li><a href="index.html" class="smoothScroll">Inicio</a></li>
+                   <li><a href="index.php" class="smoothScroll">Inicio</a></li>
                     <li><a href="./catalogo/public/index.php" class="smoothScroll">Catálogo</a></li>
-                    <li><a href="index.html#feature" class="smoothScroll">Destacados</a></li>
-                    <li><a href="index.html#about" class="smoothScroll">Quiénes Somos</a></li>
+                    <li><a href="index.php#feature" class="smoothScroll">Destacados</a></li>
+                    <li><a href="index.php#about" class="smoothScroll">Quiénes Somos</a></li>
                     <li class="active"><a href="contactos.html" class="smoothScroll">Contactos</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="login.html"><span>Login</span></a></li>
-                </ul>
+                <?php include 'backend/includes/navbar_usuario.php'; ?>
             </div>
         </div>
     </section>

@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
 $nombre = trim($_POST['nombre'] ?? '');

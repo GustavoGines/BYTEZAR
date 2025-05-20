@@ -1,22 +1,29 @@
 <?php
-require '../backend/config/db.php';
+require_once __DIR__ . '/../../backend/config/db.php';
 
 // Obtener categorías
-$queryCategorias = "SELECT DISTINCT categoria FROM productos";
+$queryCategorias = "SELECT id, categoria FROM categorias";
 $stmtCategorias = $pdo->query($queryCategorias);
 $categorias = $stmtCategorias->fetchAll(PDO::FETCH_ASSOC);
 
-// Filtrar categoría seleccionada
+// Filtro
 $categoriaSeleccionada = filter_input(INPUT_GET, 'categoria', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-// Obtener productos
+// Obtener productos con JOIN a categorías
 if (!empty($categoriaSeleccionada)) {
-    $queryProductos = "SELECT * FROM productos WHERE categoria = :categoria";
+    $queryProductos = "SELECT p.*, c.categoria, d.descripcion
+                       FROM productos p
+                       JOIN categorias c ON p.id_categoria = c.id
+                       LEFT JOIN detalle_productos d ON d.id_producto = p.id
+                       WHERE c.categoria = :categoria";
     $stmtProductos = $pdo->prepare($queryProductos);
-    $stmtProductos->bindParam(':categoria', $categoriaSeleccionada, PDO::PARAM_STR);
+    $stmtProductos->bindParam(':categoria', $categoriaSeleccionada);
     $stmtProductos->execute();
 } else {
-    $queryProductos = "SELECT * FROM productos";
+    $queryProductos = "SELECT p.*, c.categoria, d.descripcion
+                       FROM productos p
+                       JOIN categorias c ON p.id_categoria = c.id
+                       LEFT JOIN detalle_productos d ON d.id_producto = p.id";
     $stmtProductos = $pdo->query($queryProductos);
 }
 
@@ -29,7 +36,7 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo de Productos</title>
-
+  
 <!-- BOOTSTRAP 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../../css/owl.carousel.css" />
@@ -56,7 +63,7 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
 <!-- NAVBAR Bootstrap 5 -->
 <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
   <div class="container">
-    <a class="navbar-brand " href="../../index.html">
+    <a class="navbar-brand " href="../../index.php">
       <img src="../../images/bytezar_imagen.png" class="img-fluid" alt="BYTEZAR" style="width: 150px; margin-top: -10px;">
     </a>
     <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -65,16 +72,13 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link" href="../../index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../index.php">Inicio</a></li>
         <li class="nav-item"><a class="nav-link login-brillante" href="../../catalogo/public">Catálogo</a></li>
-        <li class="nav-item"><a class="nav-link" href="../../index.html#feature">Destacados</a></li>
-        <li class="nav-item"><a class="nav-link" href="../../index.html#about">¿Quiénes Somos?</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../index.php#feature">Destacados</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../index.php#about">¿Quiénes Somos?</a></li>
         <li class="nav-item"><a class="nav-link" href="../../contactos.html">Contactos</a></li>
       </ul>
-     <ul class="navbar-nav me-auto">
-       <li class="nav-item">
-        <a class="nav-link login-brillante" href="../../login.html">Login</a></li>
-     </ul>  
+     <?php include_once '../../backend/includes/navbar_usuario.php'; ?>
     </div>
   </div>
 

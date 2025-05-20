@@ -1,78 +1,83 @@
- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>BYTEZAR</title>
-    <!--
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BYTEZAR</title>
 
+  <!-- Bootstrap 3 CSS y estilos -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/owl.carousel.css" />
+  <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="css/tooplate-styles.css" />
 
-    -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="team" content="" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
+</head>
+<body>
+<?php session_start(); ?>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/owl.carousel.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
+<!-- ALERTAS DE LOGIN / LOGOUT -->
+<div id="alert-container" class="text-center" style="margin-top: 90px; z-index: 1050; position: relative;"></div>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const alertContainer = document.getElementById('alert-container');
 
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="./css/tooplate-styles.css" />
-    
-  </head>
-  <body>
-    <!-- PRE LOADER -->
-    <section class="preloader" id="main-loader">
-      <div class="spinner"></div>
-    </section>
-    <div class="video-background">
-      <video id="background-video"  autoplay muted loop playsinline>
-        <source src="videos/video.mp4" type="video/mp4" />
-        Tu navegador no soporta el video.
-      </video>
+  if (params.get('login') === 'exitoso') {
+    alertContainer.innerHTML = `
+      <div class="alert alert-success" role="alert">
+        ✅ ¡Bienvenido/a! Has iniciado sesión correctamente.
+      </div>
+    `;
+    setTimeout(() => alertContainer.innerHTML = "", 5000);
+  } else if (params.get('logout') === '1') {
+    alertContainer.innerHTML = `
+      <div class="alert alert-info" role="alert">
+        👋 Cerraste sesión correctamente.
+      </div>
+    `;
+    setTimeout(() => alertContainer.innerHTML = "", 10000);
+  }
+  
+</script>
+
+<!-- PRE LOADER 
+<section class="preloader" id="main-loader">
+  <div class="spinner"></div>
+</section>-->
+<div class="video-background">
+  <video id="background-video"  autoplay muted loop playsinline>
+    <source src="videos/video.mp4" type="video/mp4" />
+    Tu navegador no soporta el video.
+  </video>
+</div>
+
+<!-- NAVBAR Bootstrap 3 -->
+<section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon icon-bar"></span>
+        <span class="icon icon-bar"></span>
+        <span class="icon icon-bar"></span>
+      </button>
+      <a href="index.php" class="navbar-brand">
+        <img src="images/bytezar_imagen.png" class="img-responsive" alt="Logo Bytezar" style="width: 150px; margin-top: -10px;">
+      </a>
     </div>
 
-    <!-- MENU -->
-    <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button
-            class="navbar-toggle"
-            data-toggle="collapse"
-            data-target=".navbar-collapse"
-          >
-            <span class="icon icon-bar"></span>
-            <span class="icon icon-bar"></span>
-            <span class="icon icon-bar"></span>
-          </button>
-
-          <!-- lOGO TEXT HERE -->
-          <a href="index.html" class="navbar-brand">
-             <img src="images/bytezar_imagen.png" class="img-responsive" alt="Foto del local Bytezar"
-             style="width: 150px; margin-top: -10px; ">
-          </a>
-        </div>
-
-        <!-- MENU LINKS -->
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#home" class="smoothScroll">Inicio</a></li>
-            <li><a href="./catalogo/public" class="smoothScroll">Catálogo</a></li>
-            <li><a href="#feature" class="smoothScroll">Destacados</a></li>
-            <li><a href="#about" class="smoothScroll ">¿Quienes Somos?</a></li>
-            <li><a href="contactos.html" class="smoothScroll">Contactos</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="login.html"><span>Login</span></a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="#home" class="smoothScroll">Inicio</a></li>
+        <li><a href="./catalogo/public" class="smoothScroll">Catálogo</a></li>
+        <li><a href="#feature" class="smoothScroll">Destacados</a></li>
+        <li><a href="#about" class="smoothScroll">Quienes Somos</a></li>
+        <li><a href="./contactos.php" class="smoothScroll">Contactos</a></li>
+      </ul>
+     
+        <?php include_once 'backend/includes/navbar_usuario.php'; ?>
+    </div>
+  </div>
+</section>
 
     <!-- FEATURE -->
     <section id="home" data-stellar-background-ratio="0.5">
@@ -476,62 +481,12 @@
   </div>
 </footer>
 
-
-    <!-- SCRIPTS -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/custom.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const tabLaptops = document.querySelector('a[href="#tab01"]');
-        const tabSmartphones = document.querySelector('a[href="#tab02"]');
-
-        const imgLaptop = document.getElementById("img-laptop");
-        const imgSmartphone = document.getElementById("img-smartphone");
-
-        tabLaptops.addEventListener("click", function () {
-          imgLaptop.style.display = "block";
-          imgSmartphone.style.display = "none";
-        });
-
-        tabSmartphones.addEventListener("click", function () {
-          imgLaptop.style.display = "none";
-          imgSmartphone.style.display = "block";
-        });
-      });
-      
-         document.addEventListener("DOMContentLoaded", function () {
-     const secciones = document.querySelectorAll("section[id]");
-     const navItems = document.querySelectorAll(".navbar-nav > li > a[href^='#']");
-   
-     function resaltarItemActivo() {
-       let scroll = window.scrollY + 100;
-   
-       let seccionActiva = null;
-       secciones.forEach(seccion => {
-         if (scroll >= seccion.offsetTop) {
-           seccionActiva = seccion.getAttribute("id");
-         }
-       });
-       if (!seccionActiva && secciones.length > 0) {
-  seccionActiva = secciones[0].getAttribute("id");
-}
-       navItems.forEach(link => {
-         const parentLi = link.parentElement;
-         parentLi.classList.remove("active");
-         const targetId = link.getAttribute("href").substring(1);
-         if (targetId === seccionActiva) {
-           parentLi.classList.add("active");
-         }
-       });
-     }
-   
-     window.addEventListener("scroll", resaltarItemActivo);
-     resaltarItemActivo(); // Ejecutar al cargar
-   });
-    </script>
-  </body>
+<!-- JS SCRIPTS -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/custom.js"></script>
+</body>
 </html>

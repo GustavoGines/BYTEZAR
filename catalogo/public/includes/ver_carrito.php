@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 $carrito = $_SESSION['carrito'] ?? [];
 
 if (count($carrito) === 0): ?>
@@ -35,3 +37,4 @@ if (count($carrito) === 0): ?>
 <hr>
 <p><strong>Total:</strong> <span id="total-carrito">$<?= number_format($total, 2, ',', '.') ?></span></p>
 
+PGPASSWORD=fz8hoDvUGGuFQw8sttoUE9WBI2E8gFDf psql -h dpg-d0hpjbq4d50c73dc1gb0-a.oregon-postgres.render.com -U prueba_db_n963_user prueba_db_n963

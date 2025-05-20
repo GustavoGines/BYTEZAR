@@ -5,7 +5,7 @@
       const productoPrecio = $(this).data('precio');
 
       $.ajax({
-        url: '../backend/modules/carrito/agregar_carrito.php',
+        url: '../../backend/modules/carrito/agregar_carrito.php',
         type: 'POST',
         data: {
           id: productoId,
@@ -34,7 +34,7 @@
       const cambio = $(this).data('cambio');
     
       $.ajax({
-        url: '../backend/modules/carrito/actualizar_cantidad.php',
+        url: '../../backend/modules/carrito/actualizar_cantidad.php',
         method: 'POST',
         data: { id, cambio },
         success: function () {
@@ -86,7 +86,7 @@
 
   // Botón para eliminar producto
 function eliminarDelCarrito(id) {
-    fetch(`../backend/modules/carrito/eliminar_producto.php?id=${id}`)
+    fetch(`../../backend/modules/carrito/eliminar_producto.php?id=${id}`)
         .then(response => response.json())
         .then(data => {
             if (data.success) {

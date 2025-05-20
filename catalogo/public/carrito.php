@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 $carrito = $_SESSION['carrito'] ?? [];
 
@@ -50,7 +52,8 @@ if (empty($carrito)) {
                     <td>$<?= number_format($producto['precio'], 2, ',', '.') ?></td>
                     <td>$<?= number_format($subtotal, 2, ',', '.') ?></td>
                     <td>
-                        <a href="../backend/modules/carrito/eliminar_producto.php?indice=<?= $indice ?>" class="btn btn-danger btn-sm">Eliminar</a>
+                        <a href="../../backend/modules/carrito/eliminar_producto.php?indice=<?= $indice ?>" class="btn btn-danger btn-sm">Eliminar</a>
+
                     </td>
                 </tr>
             <?php } ?>
