@@ -1,6 +1,8 @@
 <?php
-session_start();
-require_once __DIR__ . '/../../backend/config/db.php'; // acá tenés que tener tu $pdo configurado
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+require_once __DIR__ . '/../../backend/config/db.php';
 
 // Consulta para obtener productos con categorías y descripción
 $sql = "SELECT p.*, c.categoria, d.descripcion
@@ -49,10 +51,10 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="../../index.php" class="smoothScroll">Inicio</a></li>
-                <li><a href="#catalogo" class="smoothScroll">Catálogo</a></li>
+                <li><a href="../../catalogo/public/catalogo.php" class="smoothScroll">Catálogo</a></li>
                 <li><a href="../../index.php#feature" class="smoothScroll">Destacados</a></li>
                 <li><a href="../../index.php#about" class="smoothScroll">Quiénes Somos</a></li>
-                <li><a href="../../contactos.html" class="smoothScroll">Contactos</a></li>
+                <li><a href="../../contactos.php" class="smoothScroll">Contactos</a></li>
             </ul>
          <?php include_once '../../backend/includes/navbar_usuario.php'; ?>
         </div>
@@ -60,7 +62,8 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </section>
 
 <!-- TABLA DE PRODUCTOS -->
-<div class="container tabla-productos" style="margin-top: 80px;">
+<div class="container tabla-productos" style="margin-top: 120px;">
+    <h1>Panel Administrador</h1>
     <div class="panel panel-default">
         <div class="panel-heading text-center">
             <h3><i class="fa fa-list"></i> Listado de Productos</h3>
