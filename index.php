@@ -84,21 +84,40 @@ if (session_status() === PHP_SESSION_NONE) {
 </section>
 
     <!-- FEATURE -->
-    <section id="home" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-offset-3 col-md-6 col-sm-12">
-            <div class="home-info">
-              <h1>Bienvenido a BYTEZAR</h1>
-             <p style="margin-top: 20px; margin-bottom: 40px;">El Bazar de la tecnología</p>
-
-              <a href="./catalogo/public/catalogo.php" class="btn">Ver Catálogo</a>
-            </div>
-          </div>
+<?php if (isset($_SESSION['usuario']['id_rol']) && $_SESSION['usuario']['id_rol'] === 1): ?>
+<!-- Sección para Administrador -->
+<section id="home" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6 col-sm-12">
+        <div class="home-info">
+          <h1>Panel Administrador</h1>
+          <p style="margin-top: 20px; margin-bottom: 40px;">Gestión de productos</p>
+          <a href="./catalogo/public/catalogo_admin.php" class="btn">Administrar Catálogo</a>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+<?php else: ?>
+<!-- Sección para Cliente o Visitante -->
+<section id="home" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6 col-sm-12">
+        <div class="home-info">
+          <h1>Bienvenido a BYTEZAR</h1>
+          <p style="margin-top: 20px; margin-bottom: 40px;">El Bazar de la tecnología</p>
+          <a href="./catalogo/public/catalogo.php" class="btn">Ver Catálogo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
+
 
     <!-- FEATURE -->
     <section id="feature" data-stellar-background-ratio="0.5">
