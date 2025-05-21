@@ -41,7 +41,7 @@ if (isset($_SESSION['usuario'])) {
         echo '</li>';
     }
 } else {
-    echo '<li class="nav-item"><a class="nav-link login-brillante" href="' . BASE_URL . '/login.html"><span>Login</span></a></li>';
+    echo '<li class="nav-item active"><a class="nav-link login-brillante" href="' . BASE_URL . '/login.html"><span>Login</span></a></li>';
 }
 
 echo '</ul>';
