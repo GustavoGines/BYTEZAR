@@ -44,7 +44,7 @@ CREATE TABLE "detalle_ventas" (
   
   CONSTRAINT "detalle_ventas_ibfk_1" FOREIGN KEY ("id_venta") REFERENCES "ventas" ("id"),
   CONSTRAINT "detalle_ventas_ibfk_2" FOREIGN KEY ("id_productos") REFERENCES "productos" ("id"),
-  CONSTRAINT "detalle_ventas_chk_1" CHECK ("cantidad" > 1)
+  ADD CONSTRAINT detalle_ventas_chk_1 CHECK (cantidad >= 1);
 ) ;
 
 
@@ -133,6 +133,8 @@ CREATE TABLE "ventas" (
   "id_personas" INTEGER DEFAULT NULL,
   "fecha_venta" date DEFAULT NULL,
   "id_metodo_pago" INTEGER DEFAULT NULL,
+  "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  "updated_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY ("id"),
   
   

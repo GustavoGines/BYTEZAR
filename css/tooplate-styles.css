@@ -321,7 +321,18 @@ http://www.tooplate.com/view/2106-soft-landing
   border-radius: 1px;
 }
 
- html, body {
+/* Corrige fondo blanco al abrir el dropdown del usuario en B3 */
+.custom-navbar .dropdown.open > a,
+.custom-navbar .dropdown > a:focus,
+.custom-navbar .dropdown > a:active {
+  background-color: transparent !important;
+  color: #29ca8e !important;
+  box-shadow: none;
+  outline: none;
+}
+
+
+html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
