@@ -92,6 +92,14 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
 
 <!-- Contenido -->
 <div class="container mt-5 pt-5">
+
+<?php if (isset($_SESSION['mensaje'])): ?>
+    <div class="alert alert-warning text-center">
+      <?= $_SESSION['mensaje'] ?>
+    </div>
+    <?php unset($_SESSION['mensaje']); ?>
+  <?php endif; ?>
+  
   <h1 class="mb-4 text-center  ">Catálogo de Productos</h1>
 
   <!-- Filtro por categoría -->

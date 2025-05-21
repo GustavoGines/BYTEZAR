@@ -6,6 +6,7 @@ require_once __DIR__ . '/../../backend/config/db.php';
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 if (!$id) {
+    $_SESSION['mensaje'] = '⚠️ Producto no válido.';
     header('Location: catalogo.php');
     exit;
 }
@@ -26,6 +27,7 @@ $stmtDetalle->execute(['id' => $id]);
 $detalle = $stmtDetalle->fetch(PDO::FETCH_ASSOC);
 
 if (!$producto) {
+    $_SESSION['mensaje'] = '⚠️ El producto no fue encontrado.';
     header('Location: catalogo.php');
     exit;
 }
