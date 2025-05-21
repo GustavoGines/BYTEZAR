@@ -78,7 +78,7 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         <li class="nav-item"><a class="nav-link" href="../../index.php">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link login-brillante" href="../../catalogo/public">Catálogo</a></li>
+        <li class="nav-item"><a class="nav-link login-brillante" href="../../catalogo/public/catalogo.php">Catálogo</a></li>
         <li class="nav-item"><a class="nav-link" href="../../index.php#feature">Destacados</a></li>
         <li class="nav-item"><a class="nav-link" href="../../index.php#about">¿Quiénes Somos?</a></li>
         <li class="nav-item"><a class="nav-link" href="../../contactos.php">Contactos</a></li>
@@ -95,7 +95,7 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
   <h1 class="mb-4 text-center  ">Catálogo de Productos</h1>
 
   <!-- Filtro por categoría -->
-<form action="index.php" method="get" class="mb-4">
+<form action="catalogo.php" method="get" class="mb-4">
   <div class="row justify-content-center">
     <div class="col-md-6">
       <select name="categoria" id="categoria" class="form-control" onchange="this.form.submit()">

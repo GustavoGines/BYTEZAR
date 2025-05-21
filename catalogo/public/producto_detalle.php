@@ -6,7 +6,7 @@ require_once __DIR__ . '/../../backend/config/db.php';
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 if (!$id) {
-    header('Location: index.php');
+    header('Location: catalogo.php');
     exit;
 }
 
@@ -26,7 +26,7 @@ $stmtDetalle->execute(['id' => $id]);
 $detalle = $stmtDetalle->fetch(PDO::FETCH_ASSOC);
 
 if (!$producto) {
-    header('Location: index.php');
+    header('Location: catalogo.php');
     exit;
 }
 ?>
@@ -72,7 +72,7 @@ if (!$producto) {
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         <li class="nav-item"><a class="nav-link" href="../../index.php">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="../../catalogo/public">Catálogo</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../catalogo/public/catalogo.php">Catálogo</a></li>
         <li class="nav-item"><a class="nav-link" href="../../index.php#feature">Destacados</a></li>
         <li class="nav-item"><a class="nav-link" href="../../index.php#about">¿Quiénes Somos?</a></li>
         <li class="nav-item"><a class="nav-link" href="../../contactos.php">Contactos</a></li>
@@ -86,7 +86,7 @@ if (!$producto) {
 
 <!-- Caja blanca translúcida para que se vea bien -->
 <div class="container mt-5 pt-5">
-  <a href="index.php" class="btn btn-primary mb-4">← Volver</a>
+  <a href="catalogo.php" class="btn btn-primary mb-4">← Volver</a>
   
   <div class="card detalle-fondo-blanco">
     <div class="row no-gutters">

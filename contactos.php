@@ -53,7 +53,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                    <li><a href="index.php" class="smoothScroll">Inicio</a></li>
-                    <li><a href="./catalogo/public/index.php" class="smoothScroll">Catálogo</a></li>
+                    <li><a href="./catalogo/public/catalogo.php" class="smoothScroll">Catálogo</a></li>
                     <li><a href="index.php#feature" class="smoothScroll">Destacados</a></li>
                     <li><a href="index.php#about" class="smoothScroll">Quiénes Somos</a></li>
                     <li class="active"><a href="contactos.php" class="smoothScroll">Contactos</a></li>

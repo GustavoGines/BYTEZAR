@@ -72,7 +72,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li><a href="#home" class="smoothScroll">Inicio</a></li>
-        <li><a href="./catalogo/public" class="smoothScroll">Catálogo</a></li>
+        <li><a href="./catalogo/public/catalogo.php" class="smoothScroll">Catálogo</a></li>
         <li><a href="#feature" class="smoothScroll">Destacados</a></li>
         <li><a href="#about" class="smoothScroll">Quienes Somos</a></li>
         <li><a href="./contactos.php" class="smoothScroll">Contactos</a></li>
@@ -93,7 +93,7 @@ if (session_status() === PHP_SESSION_NONE) {
               <h1>Bienvenido a BYTEZAR</h1>
              <p style="margin-top: 20px; margin-bottom: 40px;">El Bazar de la tecnología</p>
 
-              <a href="./catalogo/public/" class="btn">Ver Catálogo</a>
+              <a href="./catalogo/public/catalogo.php" class="btn">Ver Catálogo</a>
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     necesitás, encontrá el equipo perfecto para tu día a día.
                     ¡Consultanos y aprovechá nuestras ofertas exclusivas!
                   </p>
-                  <a href="./catalogo/public/index.php" class="btn" id="destacados"
+                  <a href="./catalogo/public/catalogo.php" class="btn" id="destacados"
                     >Ver Catálogo</a
                   >
                 </div>
@@ -162,7 +162,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     batería, encontrá el modelo que se adapta a tu estilo.
                     ¡Consultanos y descubrí promociones imperdibles!
                   </p>
-                  <a href="./catalogo/public/index.php" class="btn" id="destacados"
+                  <a href="./catalogo/public/catalogo.php" class="btn" id="destacados"
                     >Ver Catálogo</a
                   >
                 </div>

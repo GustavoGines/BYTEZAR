@@ -2,7 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-// Este archivo se incluye dentro de un foreach desde index.php
+// Este archivo se incluye dentro de un foreach desde catalogo.php
 // y espera una variable $producto con los datos del producto
 
 if (!isset($producto)) return;
