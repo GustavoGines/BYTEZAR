@@ -10,7 +10,7 @@ $archivo_actual = basename($_SERVER['SCRIPT_NAME']);
 
 function detectar_bootstrap_version($archivo) {
     // Lista de archivos que usan Bootstrap 3
-    $bootstrap3 = ['index.php', 'contactos.php']; // ← Agregá los nombres de tus archivos B3 aquí
+    $bootstrap3 = ['index.php', 'contactos.php', 'catalogo_admin.php']; 
     return in_array($archivo, $bootstrap3) ? 3 : 5;
 }
 
