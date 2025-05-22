@@ -34,10 +34,10 @@
   }
 </script>
 
-    <!-- PRE LOADER -->
+    <!-- PRE LOADER 
     <section class="preloader" id="main-loader">
         <div class="spinner"></div>
-    </section>
+    </section>-->
 
     <!-- VIDEO BACKGROUND -->
     <div class="video-background">
@@ -107,7 +107,7 @@
                                            placeholder="Contraseña" required>
                                 </div>
                             </div>
-
+                            
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-sm-6">
@@ -124,7 +124,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <input type="hidden" name="redirect" id="redirectInput">
                             <div class="form-group text-center">
                                 <button type="submit" class="btn section-btn btn-block">
                                     <i class="fa fa-sign-in"></i> Ingresar
@@ -212,11 +212,20 @@
   </div>
 </footer>
 
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const redirect = urlParams.get('redirect');
+      if (redirect) {
+        document.getElementById('redirectInput').value = redirect;
+      }
+    </script>
+
     <!-- SCRIPTS -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.stellar.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
+   
 </body>
 </html>

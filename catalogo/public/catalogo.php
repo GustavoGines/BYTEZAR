@@ -4,33 +4,67 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 require_once __DIR__ . '/../../backend/config/db.php';
 
-// Obtener categorías
-$queryCategorias = "SELECT id, categoria FROM categorias";
-$stmtCategorias = $pdo->query($queryCategorias);
-$categorias = $stmtCategorias->fetchAll(PDO::FETCH_ASSOC);
+// Manejo de errores de PDO
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// Filtro
-$categoriaSeleccionada = filter_input(INPUT_GET, 'categoria', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+// Inicializar $categoriaSeleccionada desde $_GET
+$categoriaSeleccionada = isset($_GET['categoria']) ? $_GET['categoria'] : '';
 
-// Obtener productos con JOIN a categorías
-if (!empty($categoriaSeleccionada)) {
-    $queryProductos = "SELECT p.*, c.categoria, d.descripcion
-                       FROM productos p
-                       JOIN categorias c ON p.id_categoria = c.id
-                       LEFT JOIN detalle_productos d ON d.id_producto = p.id
-                       WHERE c.categoria = :categoria";
-    $stmtProductos = $pdo->prepare($queryProductos);
-    $stmtProductos->bindParam(':categoria', $categoriaSeleccionada);
-    $stmtProductos->execute();
-} else {
-    $queryProductos = "SELECT p.*, c.categoria, d.descripcion
-                       FROM productos p
-                       JOIN categorias c ON p.id_categoria = c.id
-                       LEFT JOIN detalle_productos d ON d.id_producto = p.id";
-    $stmtProductos = $pdo->query($queryProductos);
+// Obtener todas las categorías para el filtro
+try {
+  $categorias = $pdo->query("SELECT categoria FROM categorias ORDER BY categoria ASC")->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+  die("Error al obtener categorías: " . $e->getMessage());
 }
 
-$productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
+try {
+  // Verificar si la tabla detalle_productos existe en PostgreSQL
+  $result = $pdo->query("SELECT to_regclass('public.detalle_productos') AS existe");
+  $row = $result->fetch(PDO::FETCH_ASSOC);
+  $detalleProductosExiste = !empty($row['existe']);
+} catch (PDOException $e) {
+  die("Error al verificar la tabla detalle_productos: " . $e->getMessage());
+}
+
+// Obtener productos con JOIN a categorías
+try {
+  if ($detalleProductosExiste) {
+    if (!empty($categoriaSeleccionada)) {
+      $queryProductos = "SELECT p.*, c.categoria, d.descripcion
+                 FROM productos p
+                 JOIN categorias c ON p.id_categoria = c.id
+                 LEFT JOIN detalle_productos d ON d.id_producto = p.id
+                 WHERE c.categoria = :categoria";
+      $stmtProductos = $pdo->prepare($queryProductos);
+      $stmtProductos->bindParam(':categoria', $categoriaSeleccionada);
+      $stmtProductos->execute();
+    } else {
+      $queryProductos = "SELECT p.*, c.categoria, d.descripcion
+                 FROM productos p
+                 JOIN categorias c ON p.id_categoria = c.id
+                 LEFT JOIN detalle_productos d ON d.id_producto = p.id";
+      $stmtProductos = $pdo->query($queryProductos);
+    }
+  } else {
+    if (!empty($categoriaSeleccionada)) {
+      $queryProductos = "SELECT p.*, c.categoria
+                 FROM productos p
+                 JOIN categorias c ON p.id_categoria = c.id
+                 WHERE c.categoria = :categoria";
+      $stmtProductos = $pdo->prepare($queryProductos);
+      $stmtProductos->bindParam(':categoria', $categoriaSeleccionada);
+      $stmtProductos->execute();
+    } else {
+      $queryProductos = "SELECT p.*, c.categoria
+                 FROM productos p
+                 JOIN categorias c ON p.id_categoria = c.id";
+      $stmtProductos = $pdo->query($queryProductos);
+    }
+  }
+  $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+  die("Error al obtener productos: " . $e->getMessage());
+}
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +82,10 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
   <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  
+<script>
+  const usuarioLogueado = <?= json_encode(isset($_SESSION['usuario'])) ?>;
+</script>
+
 </head>
 <body class="catalogo">
 
@@ -140,17 +177,53 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
 </section>
 
 
- <!-- Carrito -->
- <div id="carritoFlotante">
+<!-- Carrito -->
+<div id="carritoFlotante">
   <h2>Carrito</h2>
   <div id="productosCarrito"></div>
   <button id="cerrarCarritoBtn" class="btn btn-danger">Cerrar Carrito</button>
- </div>
+  <button id="pagarBtn" class="btn btn-success ms-2">Pagar</button>
+</div>
  <button id="abrirCarritoBtn" class="carrito-cerrado">
   &#128722; <span id="contadorCarrito" class="badge bg-danger ms-1">0</span>
  </button>
 
-      <!-- FOOTER -->
+  <!-- Modal Pagar -->
+<div class="modal fade" id="modalPagar" tabindex="-1" aria-labelledby="modalPagarLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <form id="formCompra">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalPagarLabel">Detalle de Compra</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="detalleCompra"></div>
+          <div class="mb-3">
+            <label for="metodoPago" class="form-label">Método de Pago</label>
+            <select id="metodoPago" name="metodoPago" class="form-select" required>
+              <option value="">Seleccione un método</option>
+              <?php
+                // Leer métodos de pago de la base de datos (PostgreSQL compatible)
+                try {
+                  $metodos = $pdo->query("SELECT id, metodo_pago FROM metodo_pagos")->fetchAll(PDO::FETCH_ASSOC);
+                  foreach ($metodos as $metodo) {
+                    echo '<option value="'.$metodo['id'].'">'.htmlspecialchars($metodo['metodo_pago']).'</option>';
+                  }
+                } catch (PDOException $e) {
+                  echo '<option value="">Error al cargar métodos de pago</option>';
+                }
+              ?>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Confirmar compra</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 <footer class="bg-light text-center text-dark py-5 mt-5">
   <div class="container">
     <div class="row">
@@ -211,19 +284,23 @@ $productos = $stmtProductos->fetchAll(PDO::FETCH_ASSOC);
       </div>
 
     </div>
-  </div>
+  </div><script>
+
+</script>
 </footer>
+</div>
 
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
  <!-- BOOTSTRAP 5 JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- PLUGINS EXTRAS -->
 <script src="js/carrito.js"></script>
 <script src="../../js/jquery.stellar.min.js"></script>
 <script src="../../js/owl.carousel.min.js"></script>
 <script src="../../js/smoothscroll.js"></script>
 <script src="../../js/custom.js"></script>
+
+
 </body>
 </html>

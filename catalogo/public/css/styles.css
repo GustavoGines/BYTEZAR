@@ -301,6 +301,29 @@ body.catalogo {
   z-index: -1;
 }
 
+/* Animación para que los productos desaparezcan hacia arriba */
+@keyframes desaparecerArriba {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+    height: auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+}
+
+.desaparecer-arriba {
+  animation: desaparecerArriba 0.5s ease forwards;
+}
+
   /*---------------------------------------
      FOOTER              
   -----------------------------------------*/

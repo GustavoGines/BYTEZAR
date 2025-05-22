@@ -28,8 +28,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'id_rol' => $usuario['id_rol']
         ];
 
-        // Redirigir al inicio con mensaje
-        header("Location: ../../../index.php?login=exitoso");
+        // Redirigir al inicio con mensaje o al catalogo si vino de apretar el boton Pagar
+        $redirect = $_POST['redirect'] ?? ($_SESSION['redirect_after_login'] ?? 'index.php');
+        unset($_SESSION['redirect_after_login']);
+        if (strpos($redirect, 'http') !== false || strpos($redirect, '//') !== false) {
+            $redirect = 'index.php'; // redirección segura
+        }
+        header("Location: ../../../" . $redirect . "?login=exitoso");
         exit();
     } else {
         // Credenciales incorrectas

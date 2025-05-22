@@ -9,7 +9,7 @@ $precio = filter_input(INPUT_POST, 'precio', FILTER_VALIDATE_FLOAT);
 
 if (!$id || $nombre === '' || $precio === false) {
     http_response_code(400);
-    echo "Datos inválidos.";
+    echo json_encode(['success' => false, 'message' => 'Datos inválidos.']);
     exit;
 }
 
@@ -17,7 +17,6 @@ if (!isset($_SESSION['carrito'])) {
     $_SESSION['carrito'] = [];
 }
 
-// Usar el ID como clave
 if (isset($_SESSION['carrito'][$id])) {
     $_SESSION['carrito'][$id]['cantidad'] += 1;
 } else {
@@ -29,6 +28,5 @@ if (isset($_SESSION['carrito'][$id])) {
     ];
 }
 
-http_response_code(200);
-echo "Producto agregado correctamente.";
-
+header('Content-Type: application/json');
+echo json_encode(['success' => true, 'message' => 'Producto agregado correctamente.']);

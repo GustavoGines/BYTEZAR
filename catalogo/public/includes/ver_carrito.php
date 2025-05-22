@@ -16,19 +16,19 @@ if (count($carrito) === 0): ?>
     $subtotal = $producto['precio'] * $producto['cantidad'];
     $total += $subtotal;
 ?>
-    <div class="producto d-flex justify-content-between align-items-center mb-3" id="producto-<?= $id ?>">
+    <div class="producto d-flex justify-content-between align-items-center mb-3" id="producto-<?= $id ?>" data-id="<?= $id ?>">
         <div>
             <span class="nombre"><?= htmlspecialchars($producto['nombre']) ?></span><br>
             <div class="d-flex align-items-center mt-1">
-                <button class="btn btn-sm btn-outline-secondary cambiarCantidad me-2" data-id="<?= $id ?>" data-cambio="-1">−</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary cambiarCantidad me-2" data-id="<?= $id ?>" data-cambio="-1">−</button>
                 <strong class="cantidad me-2 d-inline-block text-nowrap">Cantidad: <span><?= $producto['cantidad'] ?></span></strong>
-                <button class="btn btn-sm btn-outline-secondary cambiarCantidad me-2" data-id="<?= $id ?>" data-cambio="1">+</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary cambiarCantidad me-2" data-id="<?= $id ?>" data-cambio="1">+</button>
             </div>
             <span class="precio-unitaria d-block mt-1">Precio: $<?= number_format($producto['precio'], 2, ',', '.') ?></span>
         </div>
         <div class="text-end">
             <span class="precio d-block mb-1">Subtotal: $<?= number_format($subtotal, 2, ',', '.') ?></span>
-            <button class="btn btn-sm btn-danger" onclick="eliminarDelCarrito(<?= $id ?>)">Eliminar</button>
+            <button type="button" class="btn btn-sm btn-danger eliminarProducto" data-id="<?= $id ?>">Eliminar</button>
         </div>
     </div>
 <?php endforeach; ?>

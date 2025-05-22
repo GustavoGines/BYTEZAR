@@ -204,6 +204,9 @@ if (!$producto) {
 
 <!-- Script del carrito y dependencias -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  var usuarioLogueado = <?php echo isset($_SESSION['usuario']) ? 'true' : 'false'; ?>;
+</script>
 <script src="js/carrito.js"></script>
 
  <!-- BOOTSTRAP 5 JS -->
