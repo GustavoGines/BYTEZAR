@@ -474,10 +474,10 @@ if (session_status() === PHP_SESSION_NONE) {
               ];
               foreach ($equipo as $index => $persona): ?>
                 <div class="col-xs-6 col-sm-4 col-md-3 text-center mb-3" style="display: inline-block; float: none;">
-                  <img src="<?= BASE_URL . '/images/' . $persona['img'] ?>"
+                  <img src="images/<?= $persona['img'] ?>"
                        alt="Integrante <?= $index + 1 ?> - <?= $persona['nombre'] ?>"
                        class="img-circular mb-2"
-                       onerror="this.src='<?= BASE_URL ?>/images/default.png'">
+                       onerror="this.src='images/default.png'">
                   <p class="mb-0" style="font-size: 14px; color: #333; white-space: nowrap;"><?= $persona['nombre'] ?></p>
                 </div>
             <?php endforeach; ?>
@@ -488,7 +488,7 @@ if (session_status() === PHP_SESSION_NONE) {
               Desarrollo de un sistema de gestión de ventas y catálogo de productos<br>
               <strong>Comisión 2.2</strong>
             </p>
-            <img src="<?= BASE_URL ?>/images/UTN_FRRE.png" alt="UTN" class="img-responsive center-block mb-3" style="max-width: 180px;">
+            <img src="images/UTN_FRRE.png" alt="UTN" class="img-responsive center-block mb-3" style="max-width: 180px;">
             <p style="font-size: 14px; color: #777;">
               Universidad Tecnológica Nacional - Sede Formosa<br>
               Tecnicatura Universitaria en Programación<br>
