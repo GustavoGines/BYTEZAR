@@ -462,7 +462,7 @@ if (session_status() === PHP_SESSION_NONE) {
           <div class="row text-center">
             <?php
               $equipo = [
-                ["img" => "gerardo_medina.png", "nombre" => "Gerardo Medina"],
+                ["img" => "gerardo_medina.PNG", "nombre" => "Gerardo Medina"],
                 ["img" => "jajo.jpg", "nombre" => "Javier Quintana"],
                 ["img" => "gustavo_gines.jpg", "nombre" => "Gustavo Ginés"],
                 ["img" => "leandro_nacimento.jpg", "nombre" => "Leandro Nacimento"],
