@@ -29,6 +29,8 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <link rel="stylesheet" href="../../css/owl.carousel.css" />
   <link rel="stylesheet" href="../../css/owl.theme.default.min.css" />
   <link rel="stylesheet" href="../../css/tooplate-styles.css" />
+
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
     
 </head>
 <body>

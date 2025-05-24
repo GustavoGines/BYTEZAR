@@ -45,6 +45,8 @@ if (!$producto) {
 <link rel="stylesheet" href="../../css/font-awesome.min.css" />
 <link rel="stylesheet" href="./css/styles.css" />
 
+<link rel="icon" type="image/x-icon" href="../../favicon.ico">
+
 </head>
 
 <body class="catalogo">
