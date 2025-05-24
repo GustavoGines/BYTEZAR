@@ -18,7 +18,6 @@ if (session_status() === PHP_SESSION_NONE) {
   <link rel="stylesheet" href="css/owl.carousel.css" />
   <link rel="stylesheet" href="css/owl.theme.default.min.css" />
   <link rel="stylesheet" href="css/tooplate-styles.css" />
-
 </head>
 <body>
 <!-- ALERTAS DE LOGIN / LOGOUT -->
@@ -438,72 +437,72 @@ if (session_status() === PHP_SESSION_NONE) {
 
 
 <!-- FOOTER -->
-<footer id="footer" data-stellar-background-ratio="0.5" style="background: #f8f8f8; padding-top: 40px; padding-bottom: 40px;">
+<footer class="bg-light text-center text-dark py-5 mt-5">
   <div class="container">
-    <div class="row text-center">
+    <img src="<?= BASE_URL ?>/images/bytezar_imagen.png" alt="Bytezar" class="img-responsive center-block mb-3" style="max-width: 200px;">
+    <p class="mb-3" style="font-size: 16px; color: #333;">Bytezar es el bazar de la tecnología. Ofrecemos laptops, smartphones y asesoramiento especializado en el corazón del centro de Formosa.</p>
 
-      <!-- Logo e información del local -->
-      <div class="col-md-12">
-        <img src="images/bytezar_imagen.png" alt="Logo Bytezar" style="width: 200px; height: auto; margin-bottom: 15px;">
-        <p style="font-size: 16px; color: #333;">
-          Bytezar es el bazar de la tecnología. Ofrecemos laptops, smartphones y asesoramiento especializado en el corazón del centro de Formosa.
-        </p>
-        <hr style="margin: 30px auto; width: 60%;">
-      </div>
+    <button class="btn btn-dark mb-4" data-toggle="modal" data-target="#equipoModal">Equipo de desarrollo</button>
 
-      <!-- Fotos del equipo -->
-      <div class="col-md-12">
-        <h4 style="color: #222; margin-bottom: 20px;">Equipo de Desarrollo</h4>
-        <div class="row justify-content-center">
+    <p class="text-muted" style="font-size: 13px;">&copy; 2025 Bytezar. Todos los derechos reservados.</p>
+  </div>
 
-          <!-- Repetir este bloque para cada integrante -->
-          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="images/gerardo_medina.PNG" alt="Integrante 1" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="font-size: 14px; color: #333;">Gerardo Medina</p>
+  <!-- Modal -->
+  <div class="modal fade" id="equipoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content p-4">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title" style="font-size: 24px; font-weight: 600;">Equipo de Desarrollo</h3>
+        </div>
+        <div class="modal-body">
+          <div class="row text-center">
+            <?php
+              $equipo = [
+                ["img" => "gerardo_medina.png", "nombre" => "Gerardo Medina"],
+                ["img" => "jajo.jpg", "nombre" => "Javier Quintana"],
+                ["img" => "gustavo_gines.jpg", "nombre" => "Gustavo Ginés"],
+                ["img" => "leandro_nacimento.jpg", "nombre" => "Leandro Nacimento"],
+                ["img" => "gabriela_heretichi.jpg", "nombre" => "Gabriela Heretichi"],
+                ["img" => "tere_zamboni.jpg", "nombre" => "Teresa Zamboni"],
+                ["img" => "leo_arce.jpg", "nombre" => "Leonardo Arce"],
+                ["img" => "lourdes_villalba.jpg", "nombre" => "Lourdes Villalba"],
+                ["img" => "max_justiniano.jpg", "nombre" => "Max Justiniano"]
+              ];
+              foreach ($equipo as $index => $persona): ?>
+                <div class="col-xs-6 col-sm-4 col-md-3 text-center mb-3" style="display: inline-block; float: none;">
+                  <img src="<?= BASE_URL . '/images/' . $persona['img'] ?>"
+                       alt="Integrante <?= $index + 1 ?> - <?= $persona['nombre'] ?>"
+                       class="img-circular mb-2"
+                       onerror="this.src='<?= BASE_URL ?>/images/default.png'">
+                  <p class="mb-0" style="font-size: 14px; color: #333; white-space: nowrap;"><?= $persona['nombre'] ?></p>
+                </div>
+            <?php endforeach; ?>
           </div>
-          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="images/jajo.enc" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="font-size: 14px; color: #333;">Javier Adrián Quintana</p>
+          <div class="text-center mt-4">
+            <p style="font-size: 14px; color: #777;">
+              <strong>Trabajo Práctico</strong><br>
+              Desarrollo de un sistema de gestión de ventas y catálogo de productos<br>
+              <strong>Comisión 2.2</strong>
+            </p>
+            <img src="<?= BASE_URL ?>/images/UTN_FRRE.png" alt="UTN" class="img-responsive center-block mb-3" style="max-width: 180px;">
+            <p style="font-size: 14px; color: #777;">
+              Universidad Tecnológica Nacional - Sede Formosa<br>
+              Tecnicatura Universitaria en Programación<br>
+              Materia: Metodología en Sistemas 1 - Docente<br>
+              <strong>Facundo Leonel Verón</strong> - faccu.veron92@gmail.com<br>
+              Comisión: 2.2
+            </p>
           </div>
-              <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="images/gustavo_alejandro.jpg" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="font-size: 14px; color: #333;">Gustavo Alejandro Ginés</p>
-          </div>
-              <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="images/leandro_Nacimento.jpg" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="font-size: 14px; color: #333;">Leandro Nacimento</p>
-          </div>
-              <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="images/Gabriela_Heretichi.jpg" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="font-size: 14px; color: #333;">Gabriela Heretichi</p>
-          </div>
-              <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="images/jajo.enc" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="font-size: 14px; color: #333;">Javier Adrián Quintana</p>
-          </div>
-          <!-- ... agregar los 9 integrantes aquí ... -->
-
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
-
-      <!-- Presentación académica -->
-      <div class="col-md-12" style="margin-top: 30px;">
-         <img src="images/UTN_FRRE.png" alt="Logo Bytezar" style="width: 200px; height: auto; margin-bottom: 15px;">
-        
-        <p style="font-size: 14px; color: #777;">
-
-          Universidad Tecnologica Nacional  - Sede Formosa <br>
-          Tecnicatura en Programación <br>
-          Materia: Metodología de Sistemas - Docente<br>
-          <strong>Facundo Leonel Verón</strong> - faccu.veron92@gmail.com <br>
-          Comisión: 2.2
-        </p>
-        <p style="font-size: 12px; color: #aaa;">&copy; 2025 Bytezar</p>
-      </div>
-
     </div>
   </div>
 </footer>
+
 
 <!-- JS SCRIPTS -->
 <script src="js/jquery.js"></script>

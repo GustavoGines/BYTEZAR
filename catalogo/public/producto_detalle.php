@@ -200,54 +200,8 @@ if (!$producto) {
           Bytezar es el bazar de la tecnología. Ofrecemos laptops, smartphones y asesoramiento especializado en el corazón del centro de Formosa.
         </p>
         <hr class="my-4" style="width: 60%;">
+        <p class="text-muted small mb-0">&copy; 2025 Bytezar. Todos los derechos reservados.</p>
       </div>
-
-      <!-- Fotos del equipo -->
-      <div class="col-12 mb-4">
-        <h4 class="mb-4" style="color: #222;">Equipo de Desarrollo</h4>
-        <div class="row justify-content-center g-3">
-          <!-- Integrante 1 -->
-          <div class="col-6 col-sm-4 col-md-2 text-center">
-            <img src="../../images/gerardo_medina.PNG" alt="Gerardo Medina" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
-            <p class="mb-0" style="font-size: 14px; color: #333;">Gerardo Medina</p>
-          </div>
-          <!-- Integrante 2 -->
-          <div class="col-6 col-sm-4 col-md-2 text-center">
-            <img src="../../images/jajo.enc" alt="Javier Adrián Quintana" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
-            <p class="mb-0" style="font-size: 14px; color: #333;">Javier Adrián Quintana</p>
-          </div>
-          <div class="col-6 col-sm-4 col-md-2 text-center">
-            <img src="../../images/gustavo_alejandro.jpg" alt="Gustavo Alejandro Ginés" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
-            <p class="mb-0" style="font-size: 14px; color: #333;">Gustavo Alejandro Ginés</p>
-          </div>
-          <div class="col-6 col-sm-4 col-md-2 text-center">
-            <img src="../../images/leandro_Nacimento.jpg" alt="Leandro Nacimento" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
-            <p class="mb-0" style="font-size: 14px; color: #333;">Leandro Nacimento</p>
-          </div>
-          <div class="col-6 col-sm-4 col-md-2 text-center">
-            <img src="../../images/Gabriela_Heretichi.jpg" alt="Gabriela Heretichi" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
-            <p class="mb-0" style="font-size: 14px; color: #333;">Gabriela Heretichi</p>
-          </div>
-          <div class="col-6 col-sm-4 col-md-2 text-center">
-            <img src="../../images/jajo.enc" alt="Javier Adrián Quintana" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
-            <p class="mb-0" style="font-size: 14px; color: #333;">Javier Adrián Quintana</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Presentación académica -->
-      <div class="col-12 mt-4">
-        <img src="../../images/UTN_FRRE.png" alt="UTN" class="img-fluid mb-3" style="max-width: 200px;">
-        <p style="font-size: 14px; color: #777;">
-          Universidad Tecnológica Nacional - Sede Formosa<br>
-          Tecnicatura en Programación<br>
-          Materia: Metodología de Sistemas - Docente<br>
-          <strong>Facundo Leonel Verón</strong> - faccu.veron92@gmail.com<br>
-          Comisión: 2.2
-        </p>
-        <p class="text-muted" style="font-size: 12px;">&copy; 2025 Bytezar</p>
-      </div>
-
     </div>
   </div>
 </footer>
