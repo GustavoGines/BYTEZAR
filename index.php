@@ -458,30 +458,44 @@ if (session_status() === PHP_SESSION_NONE) {
 
           <!-- Repetir este bloque para cada integrante -->
           <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="images/gerardo_medina.PNG" alt="Integrante 1" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <img src="images/gerardo_medina.PNG" 
+            alt="Integrante 1" 
+            style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
             <p style="font-size: 14px; color: #333;">Gerardo Medina</p>
           </div>
           <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="images/jajo.enc" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <img src="images/jajo.jpg" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
             <p style="font-size: 14px; color: #333;">Javier Adrián Quintana</p>
           </div>
-              <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="images/gustavo_alejandro.jpg" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="images/gustavo_gines.jpg" alt="Integrante 3" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
             <p style="font-size: 14px; color: #333;">Gustavo Alejandro Ginés</p>
           </div>
-              <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="images/leandro_Nacimento.jpg" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="images/leandro_nacimento.jpg" alt="Integrante 4" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
             <p style="font-size: 14px; color: #333;">Leandro Nacimento</p>
           </div>
-              <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="images/Gabriela_Heretichi.jpg" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="images/gabriela_heretichi.jpg" alt="Integrante 5" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
             <p style="font-size: 14px; color: #333;">Gabriela Heretichi</p>
           </div>
-              <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
-            <img src="images/jajo.enc" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
-            <p style="font-size: 14px; color: #333;">Javier Adrián Quintana</p>
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="images/tere_zamboni.jpg" alt="Integrante 6" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Teresa Zamboni</p>
           </div>
-          <!-- ... agregar los 9 integrantes aquí ... -->
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="images/leo_arce.jpg" alt="Integrante 7" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Leonardo Arce</p>
+          </div>
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="images/lourdes_villalba.jpg" alt="Integrante 8" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Lourdes Villalba</p>
+          </div>
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="images/max_justiniano.jpg" alt="Integrante 9" 
+            style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Max Justiniano</p>
+          </div>
 
         </div>
       </div>
@@ -512,5 +526,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/smoothscroll.js"></script>
 <script src="js/custom.js"></script>
+
+<?php include 'backend/includes/footer.php'; ?>
 </body>
 </html>

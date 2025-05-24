@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../helpers/bootstrap_helper.php';
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -7,12 +8,6 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // Detectar automáticamente la versión de Bootstrap según el archivo actual
 $archivo_actual = basename($_SERVER['SCRIPT_NAME']);
-
-function detectar_bootstrap_version($archivo) {
-    // Lista de archivos que usan Bootstrap 3
-    $bootstrap3 = ['index.php', 'contactos.php', 'catalogo_admin.php']; 
-    return in_array($archivo, $bootstrap3) ? 3 : 5;
-}
 
 $bootstrap_version = detectar_bootstrap_version($archivo_actual);
 

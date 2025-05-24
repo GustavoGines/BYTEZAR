@@ -335,6 +335,14 @@ body.catalogo {
   .copyright-text p {
     margin: 5px;
   }
+  .img-circular {
+  width: 100px;
+  height: 100px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
 
   /* ========================
    ADAPTACIÓN RESPONSIVE

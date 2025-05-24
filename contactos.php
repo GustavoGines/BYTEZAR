@@ -185,5 +185,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
+
+    <?php include 'backend/includes/footer.php'; ?>
 </body>
 </html>

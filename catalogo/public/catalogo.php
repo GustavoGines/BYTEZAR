@@ -238,35 +238,48 @@ try {
       </div>
 
       <!-- Fotos del equipo -->
-      <div class="col-12 mb-4">
-        <h4 class="mb-4" style="color: #222;">Equipo de Desarrollo</h4>
-        <div class="row justify-content-center g-3">
-          <!-- Integrante 1 -->
-          <div class="col-6 col-sm-4 col-md-2 text-center">
-            <img src="../../images/gerardo_medina.PNG" alt="Gerardo Medina" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
-            <p class="mb-0" style="font-size: 14px; color: #333;">Gerardo Medina</p>
+      <div class="col-md-12">
+        <h4 style="color: #222; margin-bottom: 20px;">Equipo de Desarrollo</h4>
+        <div class="row justify-content-center">
+
+          <!-- Repetir este bloque para cada integrante -->
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="../../images/gerardo_medina.PNG" alt="Integrante 1" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Gerardo Medina</p>
           </div>
-          <!-- Integrante 2 -->
-          <div class="col-6 col-sm-4 col-md-2 text-center">
-            <img src="../../images/jajo.enc" alt="Javier Adrián Quintana" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
-            <p class="mb-0" style="font-size: 14px; color: #333;">Javier Adrián Quintana</p>
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="../../images/jajo.jpg" alt="Integrante 2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Javier Adrián Quintana</p>
           </div>
-          <div class="col-6 col-sm-4 col-md-2 text-center">
-            <img src="../../images/gustavo_alejandro.jpg" alt="Gustavo Alejandro Ginés" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
-            <p class="mb-0" style="font-size: 14px; color: #333;">Gustavo Alejandro Ginés</p>
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="../../images/gustavo_gines.jpg" alt="Integrante 3" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Gustavo Alejandro Ginés</p>
           </div>
-          <div class="col-6 col-sm-4 col-md-2 text-center">
-            <img src="../../images/leandro_Nacimento.jpg" alt="Leandro Nacimento" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
-            <p class="mb-0" style="font-size: 14px; color: #333;">Leandro Nacimento</p>
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="../../images/leandro_nacimento.jpg" alt="Integrante 4" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Leandro Nacimento</p>
           </div>
-          <div class="col-6 col-sm-4 col-md-2 text-center">
-            <img src="../../images/Gabriela_Heretichi.jpg" alt="Gabriela Heretichi" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
-            <p class="mb-0" style="font-size: 14px; color: #333;">Gabriela Heretichi</p>
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="../../images/gabriela_heretichi.jpg" alt="Integrante 5" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Gabriela Heretichi</p>
           </div>
-          <div class="col-6 col-sm-4 col-md-2 text-center">
-            <img src="../../images/jajo.enc" alt="Javier Adrián Quintana" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
-            <p class="mb-0" style="font-size: 14px; color: #333;">Javier Adrián Quintana</p>
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="../../images/tere_zamboni.jpg" alt="Integrante 6" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Teresa Zamboni</p>
           </div>
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="../../images/leo_arce.jpg" alt="Integrante 7" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Leonardo Arce</p>
+          </div>
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="../../images/lourdes_villalba.jpg" alt="Integrante 8" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Lourdes Villalba</p>
+          </div>
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 20px;">
+            <img src="../../images/max_justiniano.jpg" alt="Integrante 9" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+            <p style="font-size: 14px; color: #333;">Max Justiniano</p>
+          </div>
+
         </div>
       </div>
 
@@ -284,9 +297,7 @@ try {
       </div>
 
     </div>
-  </div><script>
-
-</script>
+  </div>
 </footer>
 </div>
 
@@ -301,6 +312,6 @@ try {
 <script src="../../js/smoothscroll.js"></script>
 <script src="../../js/custom.js"></script>
 
-
+<?php include '../../backend/includes/footer.php'; ?>
 </body>
 </html>

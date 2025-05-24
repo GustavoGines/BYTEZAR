@@ -84,6 +84,11 @@ $(document).ready(function () {
     $('#carritoFlotante').css('right', '-300px');
   }
 
+
+  //               MODAL DE PAGO
+
+
+
   // Mostrar detalle de compra en el modal usando AJAX
   function mostrarDetalleCompra() {
     $.get('includes/ver_carrito.php', function(html) {
