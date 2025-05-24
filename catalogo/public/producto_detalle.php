@@ -132,11 +132,61 @@ if (!$producto) {
   <span id="contadorCarrito" class="badge bg-danger ms-1">0</span>
 </button>
 
+<!-- Carrito -->
 <div id="carritoFlotante">
   <h2>Carrito</h2>
   <div id="productosCarrito"></div>
   <button id="cerrarCarritoBtn" class="btn btn-danger">Cerrar Carrito</button>
+  <button id="btnPagar" class="btn btn-success w-50 ">Pagar</button>
+
+  <!-- ALERTA de carrito vacío -->
+  <div id="alertaCarritoVacio" class="alert alert-danger d-none" role="alert">
+    Tu carrito está vacío. Agregá al menos un producto para continuar.
+  </div>
 </div>
+
+<!-- MODAL -->
+<div class="modal fade" id="modalPago" tabindex="-1" aria-labelledby="modalPagoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content border-success shadow">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalPagoLabel">Resumen de tu Compra</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <div id="alertaMetodoPago" class="alert alert-warning d-none" role="alert">
+          Por favor, seleccioná un método de pago.
+        </div>
+        <div id="modalDetalle">          
+          <!-- Aquí irá la lista de productos si hay -->
+            <div id="listaProductos"></div>
+        </div>
+        <hr>
+        <div class="mb-3">
+          <label for="tipoPago" class="form-label fw-bold">Forma de pago:</label>
+          <select class="form-select" id="tipoPago" required>
+            <option value="" disabled selected>Seleccionar</option>
+            <option value="Efectivo">Efectivo</option>            
+            <option value="Transferencia Bancaria">Transferencia</option>
+            <option value="Tarjeta de Crédito">Tarjeta de crédito</option>
+            <option value="Tarjeta de Débito">Tarjeta de débito</option>
+            <option value="Billetera Virtual">Billetera virtual</option>
+          </select>
+        </div>
+        <div class="d-flex justify-content-between fs-5 fw-bold">
+          <span>Total:</span>
+          <span id="modalTotal" class="text-success">$0.00</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" id="confirmarPago">Confirmar Compra</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
      <!-- FOOTER -->
 <footer class="bg-light text-center text-dark py-5 mt-5">

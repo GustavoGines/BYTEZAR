@@ -334,7 +334,7 @@ if (session_status() === PHP_SESSION_NONE) {
                   class="img-responsive"
                   alt="Luis Gómez"
                 />
-                <h4>Luis Gómez</h4>
+                <h4>Luisa Gómez</h4>
               </div>
             </div>
           </div>
@@ -512,5 +512,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/smoothscroll.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/carrito.js"></script>
+
 </body>
 </html>

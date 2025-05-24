@@ -126,3 +126,119 @@ function mostrarMensaje(texto, exito) {
     setTimeout(() => div.remove(), 3000);
 }
 
+document.getElementById("btnPagar").addEventListener("click", function () {
+  fetch("../../catalogo/public/verificar_sesion.php")
+    .then(response => response.json())
+    .then(data => {
+      if (data.logueado) {
+        // Obtener productos del carrito
+fetch("../../catalogo/public/obtener_carrito.php")
+  .then(res => res.json())
+  .then(data => {
+    const carrito = Object.values(data);
+
+if (!Array.isArray(carrito) || carrito.length === 0) {
+  const alerta = document.getElementById("alertaCarritoVacío");
+  if (alerta) {
+    alerta.classList.remove("d-none");
+    alerta.scrollIntoView({ behavior: "smooth" });
+  }
+  return;
+} else {
+  const alerta = document.getElementById("alertaCarritoVacío");
+  if (alerta) {
+    alerta.classList.add("d-none");
+  }
+}
+
+    let total = 0;
+    let html = '<ul class="list-group mb-3">';
+    carrito.forEach(prod => {
+      const subtotal = prod.precio * prod.cantidad;
+      total += subtotal;
+
+      html += `
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div>
+            <h6 class="my-0">${prod.nombre}</h6>
+            <small class="text-muted">Cantidad: ${prod.cantidad} x $${prod.precio}</small>
+          </div>
+          <span class="text-muted">$${subtotal.toFixed(2)}</span>
+        </li>`;
+    });
+    html += '</ul>';
+
+    document.getElementById("modalDetalle").innerHTML = html;
+    document.getElementById("modalTotal").textContent = `$${total.toFixed(2)}`;
+
+    new bootstrap.Modal(document.getElementById("modalPago")).show();
+  })
+  .catch(error => {
+    console.error("Error al obtener el carrito:", error);
+  });
+
+    } else {
+        // Redirigir al login si no está logueado
+        window.location.href = "/BYTEZAR/login.html";
+      }
+    });
+});
+
+document.getElementById("confirmarPago").addEventListener("click", function () {
+  const tipoPago = document.getElementById("tipoPago").value;
+
+  if (!tipoPago) {
+  const alerta = document.getElementById("alertaMetodoPago");
+  alerta.classList.remove("d-none"); // mostrar alerta
+  return;
+} else {
+  document.getElementById("alertaMetodoPago").classList.add("d-none"); // ocultar si está visible
+}
+
+
+  // Volver a obtener el carrito (por seguridad)
+  fetch("../../catalogo/public/obtener_carrito.php")
+    .then(res => res.json())
+    .then(data => {
+      const carrito = Object.values(data);
+
+      if (!Array.isArray(carrito) || carrito.length === 0) {
+        alert("El carrito está vacío.");
+        return;
+      }
+
+      // Enviar carrito y tipo de pago al backend
+      fetch("../../backend/modules/pagos/registrar_venta.php", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          carrito: carrito,
+          metodo_pago: tipoPago
+        })
+      })
+      .then(res => res.json())
+      .then(respuesta => {
+        if (respuesta.exito) {          
+          // Limpiar modal y recargar
+          document.getElementById("modalDetalle").innerHTML = "";
+          document.getElementById("modalTotal").textContent = "$0.00";
+          document.getElementById("tipoPago").value = "";
+          const modal = bootstrap.Modal.getInstance(document.getElementById("modalPago"));
+            if (modal) {
+              modal.hide();
+            }
+
+          window.location.href = "/BYTEZAR/compra_exitosa.php";
+        } else {
+          alert("Error: " + respuesta.mensaje);
+        }
+      })
+      .catch(err => {
+        console.error("Error al registrar la venta:", err);
+      });
+    });
+});
+
